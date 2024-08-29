@@ -1,7 +1,12 @@
+import SinglePageComponent from "@/components/SinglePageComponent";
 import React from "react";
 
-const page = () => {
-  return <div>page</div>;
+const Index = () => {
+  return (
+    <div>
+      <SinglePageComponent />
+    </div>
+  );
 };
 
-export default page;
+export default Index;
