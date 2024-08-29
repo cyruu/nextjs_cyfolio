@@ -82,7 +82,7 @@ const Home = () => {
           </div>
           <div id="intro" className="intro flex justify-center items-center">
             <p className="hello text-2xl md:text-3xl">
-              <span className="secondname mr-2">हेलो !</span>I'm
+              <span className="secondname mr-2">हेलो !</span>I&apos;m
             </p>
             <p className="name text-5xl mt-2 mb-4 md:text-7xl md:my-4">
               Cyrus<span className="lastname ml-5">Maharjan</span>
