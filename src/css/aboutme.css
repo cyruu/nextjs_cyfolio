@@ -20,12 +20,12 @@
 }
 
 #aboutpara {
-  transform: translateX(-300px);
+  /* transform: translateX(-300px); */
   transition: all 0.55s ease-out;
 }
 #skillresume {
   opacity: 0;
-  transform: translateX(300px);
+  /* transform: translateX(300px); */
   transition: all 0.55s ease-out;
   /* transition-delay: 0.45s; */
 }

@@ -97,10 +97,11 @@ function AboutMe() {
         </p>
         {/* second */}
         <p id="aboutpara" className="">
-          Hi, I'm Cyrus Maharjan and this is my portfolio website. I'm very
-          passionate and enthusiastic on learning how web really works. As of
-          now, I'm proficient in front-end development, but I plan to expand my
-          skills to backend development. <b>Gonna be full stack developer</b>.
+          Hi, I&apos;m Cyrus Maharjan and this is my portfolio website. I&apos;m
+          very passionate and enthusiastic on learning how web really works. As
+          of now, I&apos;m proficient in front-end development, but I plan to
+          expand my skills to backend development.{" "}
+          <b>Gonna be full stack developer</b>.
           <br />
           <br />
           <span className="themeColor">Here are some of my skills </span>
