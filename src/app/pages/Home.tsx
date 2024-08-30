@@ -11,14 +11,14 @@ const Home = () => {
       >
         <div
           id="intro-pic"
-          className="intro-pic flex flex-col items-center justify-center md:flex-row"
+          className="intro-pic w-[75%] flex flex-col items-center justify-center md:flex-row"
         >
           <div
             id="pic"
             className="pic flex-1 flex justify-center items-center flex-col relative"
           >
-            <div className="socials">
-              <div className="instagram social-icon">
+            <div className="socials hidden absolute top-[-10px] left-[-10px] md:block ">
+              <div className="instagram social-icon top-[20px] left-[-15px]">
                 <a
                   href="https://www.instagram.com/cyruz_maharjan/"
                   target="_blank"
@@ -30,7 +30,7 @@ const Home = () => {
                   <p className="ml-2">Instagram</p>
                 </a>
               </div>
-              <div className="linkedin social-icon">
+              <div className="linkedin social-icon top-[90px] left-[-75px]">
                 <a
                   target="_blank"
                   href="https://www.linkedin.com/in/cyrus-maharjan-1540aa2aa/"
@@ -42,7 +42,7 @@ const Home = () => {
                   <p className="ml-5">Linkedin</p>
                 </a>
               </div>
-              <div className="github social-icon">
+              <div className="github social-icon top-[160px] left-[-75px]">
                 <a
                   href="https://github.com/cyruu"
                   target="_blank"
@@ -55,7 +55,7 @@ const Home = () => {
                 </a>
               </div>
 
-              <div className="youtube social-icon">
+              <div className="youtube social-icon top-[230px] left-[-15px]">
                 <a
                   target="_blank"
                   href="https://www.youtube.com/channel/UCmI2DPvG2eHIjAtl0Yk3XEQ"
@@ -80,7 +80,10 @@ const Home = () => {
               <p className="mt-2 bg-white px-2">Web Developer</p>
             </div>
           </div>
-          <div id="intro" className="intro flex justify-center items-center">
+          <div
+            id="intro"
+            className="intro flex flex-col justify-center items-start flex-1"
+          >
             <p className="hello text-2xl md:text-3xl">
               <span className="secondname mr-2">हेलो !</span>I&apos;m
             </p>

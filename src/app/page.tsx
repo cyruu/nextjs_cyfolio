@@ -1,11 +1,13 @@
-import SinglePageComponent from "@/components/SinglePageComponent";
+import { Navbar, SinglePageComponent } from "@/index.js";
+
 import React from "react";
 
 const Index = () => {
   return (
-    <div>
+    <>
+      <Navbar />
       <SinglePageComponent />
-    </div>
+    </>
   );
 };
 

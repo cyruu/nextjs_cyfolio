@@ -1,0 +1,65 @@
+.resume {
+  margin-top: 20px;
+}
+
+.themeColor {
+  color: var(--themeColor);
+}
+
+.skill {
+  height: 70px;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 15px;
+}
+.skill img {
+  background-position: center;
+  height: 90%;
+}
+
+#aboutpara {
+  transform: translateX(-300px);
+  transition: all 0.55s ease-out;
+}
+#skillresume {
+  opacity: 0;
+  transform: translateX(300px);
+  transition: all 0.55s ease-out;
+  /* transition-delay: 0.45s; */
+}
+#aboutpara {
+  width: 70%;
+}
+#skills {
+  width: 85%;
+}
+.resumebutton {
+  margin: auto;
+  padding: 10px 15px;
+}
+@media only screen and (max-width: 431px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  #aboutpara {
+    width: 95%;
+    font-size: 0.75rem;
+  }
+  #skills {
+    width: 95%;
+  }
+  .skill {
+    height: 40px;
+    width: 40px;
+    margin: 10px 7px;
+  }
+  .resume p {
+    font-size: 0.75rem;
+  }
+  .resume a {
+    font-size: 0.85rem;
+  }
+}

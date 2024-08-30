@@ -17,12 +17,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/favicon.png" />
         <link
           href="
 https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.min.css
 "
           rel="stylesheet"
         />
+        <title>Cyfolio</title>
       </head>
       <body className={inter.className}>{children}</body>
     </html>

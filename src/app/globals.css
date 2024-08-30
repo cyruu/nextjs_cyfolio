@@ -37,22 +37,6 @@ body {
   position: relative;
 }
 
-.navbar {
-  transition: all 0.2s ease-out;
-  z-index: 1;
-  position: fixed;
-  top: 0px;
-  color: rgb(0, 0, 0);
-  /* overflow-x: hidden; */
-  background-color: white;
-  /* box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.082); */
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 100px;
-  align-items: center;
-  height: 10vh;
-}
 .burgerclicked {
   background-color: rgb(45, 45, 45);
   color: white;
@@ -62,29 +46,17 @@ body {
 }
 .logo {
   font-family: "Orbitron", sans-serif;
-  font-optical-sizing: auto;
-  font-size: 2rem;
-  flex: 0.35;
 }
-.links {
-  flex: 0.35;
-  position: relative;
 
-  display: flex;
-  height: 100%;
-  /* background-color: red; */
-}
-.links a {
+.eachlink {
   font-size: 1.1rem;
   position: relative;
   width: 100px;
   /* background-color: red; */
-  /* padding: 20px 0px; */
   display: flex;
   justify-content: center;
   align-items: center;
   margin-right: 30px;
-  /* background-color: aqua; */
   overflow: hidden;
 }
 
@@ -99,6 +71,7 @@ body {
   bottom: 0px;
   transition: all 0.2s linear;
 }
+
 #blogline {
   height: 4px;
   bottom: 0px;
@@ -111,16 +84,7 @@ body {
 .links a:hover > .line {
   left: 0;
 }
-#activeline {
-  position: absolute;
-  transition: all 0.25s linear;
-  height: 4px;
-  width: 100px;
-  border-radius: 4px;
-  bottom: 0;
 
-  background-color: rgb(56, 56, 56);
-}
 .secondname,
 .lastname {
   color: var(--themeColor);
@@ -158,91 +122,25 @@ body {
   color: var(--faded);
 }
 
-#aboutme {
-  overflow: hidden;
-}
-.burger {
-  display: none;
-}
-
-.logo {
-  padding: 10px 20px;
-}
-/* 1528 yo laptop ko resolution */
-/* slight adjustment */
-@media only screen and (1100px<width<1200px) {
-  .socials {
-    transform: translateX(-85px);
-  }
-}
-@media only screen and (1300px<width<1500px) {
-  .socials {
-    transform: translateX(-25px);
-  }
-}
-
 /* @media only screen and (1200px<width<1300px) { */
 /* aaus */
 @media only screen and (1200px < width < 1300px) {
-  /* body {
-    background-color: rgb(18, 199, 130);
-  } */
-  #projecttitle {
-  }
   .project {
     height: 235px;
     width: 180px;
   }
-  .links a {
-    font-size: 1.03rem;
-  }
-
+  /* required (aaus pc) */
   .socials {
-    transform: translateX(-65px);
+    transform: translateX(-50px);
   }
 }
-@media only screen and (max-width: 431px) and (height < 745px) {
-  .navbar {
-    margin-bottom: 17px;
-  }
-}
+
 /* iphone */
 @media only screen and (max-width: 431px) {
   html {
     scroll-padding-top: 95px;
   }
-  .socials {
-    display: none;
-  }
-  #aboutme {
-    padding-bottom: 50px;
-  }
   /* #projectitle {
     margin-top: 0px;
   } */
-  #abouttext {
-    margin-top: 0;
-  }
-  /* .navbar {
-    overflow-x: hidden;
-  } */
-  .burger {
-    z-index: 100;
-    display: block;
-  }
-  .links {
-    display: none;
-  }
-  .logo {
-    font-size: 1.6rem;
-  }
-  .navbar {
-    width: 100%;
-    background-color: rgb(45, 45, 45);
-    color: white;
-    padding: 0 15px;
-    height: 10vh;
-    display: flex;
-    justify-content: space-between;
-  }
 }
