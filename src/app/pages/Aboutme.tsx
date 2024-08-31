@@ -1,15 +1,21 @@
 // import React, { useEffect } from "react";
 // import "../css/aboutme.css";
-// import html from "../images/html.png";
-// import js from "../images/js.png";
-// import mysql from "../images/mysql.png";
-// import php from "../images/phpimage.png";
-// import react from "../images/react.png";
-// import redux from "../images/redux.png";
-// import tailwind from "../images/tailwind.png";
-// import css from "../images/css.png";
+import Image from "next/image";
+import js from "@/images/js.png";
+import html from "../../images/html.png";
+import mysql from "../../images/mysql.png";
+import php from "../../images/phpimage.png";
+import react from "../../images/react.png";
+import redux from "../../images/redux.png";
+import tailwind from "../../images/tailwind.png";
+import css from "../../images/css.png";
+import nextjs from "../../images/nextjs.png";
+import expressjs from "../../images/expressjs.png";
+import nodejs from "../../images/nodejs.png";
+import mongodb from "../../images/mongodb.png";
 import "@/css/aboutme.css";
-// import cyrusResume from "../resume/cyrusResume.pdf";
+// import CyrusResume from "@/resume/CyrusResume.pdf";
+import Link from "next/link";
 function AboutMe() {
   // In your React component
   // useEffect(() => {
@@ -91,12 +97,12 @@ function AboutMe() {
         {/* first */}
         <p
           id="abouttext"
-          className="font-bold text-3xl my-6 text-gray-600 mb-8 transition-all duration-600 ease-out"
+          className="font-bold text-2xl my-6 text-gray-600 mb-8 transition-all duration-600 ease-out md:text-3xl"
         >
           Who am I?
         </p>
         {/* second */}
-        <p id="aboutpara" className="">
+        <p id="aboutpara" className="w-[95%] text-xs md:w-[70%] md:text-md">
           Hi, I&apos;m Cyrus Maharjan and this is my portfolio website. I&apos;m
           very passionate and enthusiastic on learning how web really works. As
           of now, I&apos;m proficient in front-end development, but I plan to
@@ -104,35 +110,67 @@ function AboutMe() {
           <b>Gonna be full stack developer</b>.
           <br />
           <br />
-          <span className="themeColor">Here are some of my skills </span>
+          <span className="themeColor text-xs md:text-md">
+            Here are some of my skills
+          </span>
         </p>
       </div>
       {/* third */}
-      <div id="skillresume" className="skill-resume flex flex-col">
+      <div
+        id="skillresume"
+        className="skill-resume flex flex-col transition-all duration-500 ease-out"
+      >
         <div
           id="skills"
-          className="mt-10 mx-auto flex flex-wrap justify-center items-center"
+          className="mt-10 mx-auto w-[95%] flex flex-wrap justify-center items-center md:w-[70%]"
         >
-          <div className="skill">{/* <img src={js} alt="" /> */}</div>
-          <div className="skill">{/* <img src={react} alt="" /> */}</div>
-          <div className="skill">{/* <img src={redux} alt="" /> */}</div>
-          <div className="skill">{/* <img src={html} alt="" /> */}</div>
-          <div className="skill">{/* <img src={css} alt="" /> */}</div>
-          <div className="skill">{/* <img src={tailwind} alt="" /> */}</div>
-          <div className="skill">{/* <img src={php} alt="" /> */}</div>
-          <div className="skill">{/* <img src={mysql} alt="" /> */}</div>
+          <div className="skill">
+            <Image src={js} alt="js" className="" />
+          </div>
+          <div className="skill">
+            <Image src={react} alt="react" />
+          </div>
+          <div className="skill">
+            <Image src={nextjs} alt="nextjs" className="h-full" />
+          </div>
+          <div className="skill">
+            <Image src={mongodb} alt="mongodb" />
+          </div>
+          <div className="skill">
+            <Image src={expressjs} alt="expressjs" />
+          </div>
+          <div className="skill">
+            <Image src={redux} alt="redux" />
+          </div>
+          <div className="skill">
+            <Image src={tailwind} alt="tailiwind" />
+          </div>
+          <div className="skill">
+            <Image src={php} alt="php" />
+          </div>
+          <div className="skill">
+            <Image src={mysql} alt="mysql" />
+          </div>
+          <div className="skill">
+            <Image src={html} alt="html" />
+          </div>
+          <div className="skill">
+            <Image src={css} alt="css" />
+          </div>
         </div>
-        <div className="resume flex flex-col">
-          <p className="themeColor mb-5">Take a look at my Résumé</p>
-          {/* <a
-            href={cyrusResume}
+        <div className="resume flex flex-col mt-2">
+          <p className="themeColor text-xs mb-5 md:text-md">
+            Take a look at my Résumé
+          </p>
+          <Link
+            href="/resume/CyrusResume.pdf"
             target="_blank"
             download="cyrusResume"
             className="button resumebutton "
           >
             Résumé
             <i className="ri-download-fill ml-2"></i>
-          </a> */}
+          </Link>
         </div>
       </div>
     </section>
