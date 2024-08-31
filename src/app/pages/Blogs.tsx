@@ -53,7 +53,7 @@ function Blog() {
   //   firstBlogObserver.observe(blogSection);
   // }, []);
   return (
-    <section id="blog" className="min-h-[90vh]">
+    <section id="blog" className="min-h-[90vh] flex flex-col items-center">
       <div
         id="blogtopic"
         className="flex  mx-auto justify-center  flex-col items-center"
@@ -61,40 +61,48 @@ function Blog() {
         {/* first */}
         <p
           id="blogtitle"
-          className="font-bold text-2xl mb-8 text-gray-600 transition-all duration-600 ease-out md:text-3xl"
+          className="font-bold text-2xl my-6 text-gray-600 transition-all duration-600 ease-out md:text-3xl"
         >
           Blog
         </p>
       </div>
       {/* topic ends */}
-      <div className="blogitems">
+      <div className="blogitems flex w-full md:w-[90%]">
         {/* first blog */}
-        <div id="firstblog">
+        <div
+          id="firstblog"
+          className="grid grid-cols-1 place-items-center gap-8 md:grid-cols-3 md:gap-0 "
+        >
           {blogs.map((blog) => {
             return (
               <Link
                 href={`/blog/${blog.id}`}
                 rel="noopener noreferrer"
-                className="blogitem"
+                className="blogitem flex flex-col w-[80%] h-full rounded-2xl overflow-hidden transition-all duration-200 ease-in hover:shadow-md "
                 key={blog.id}
               >
-                <div className="blogimage">
-                  <Image src={blog.thumbnail} alt="" />
+                <div className="blogimage p-2">
+                  <Image src={blog.thumbnail} alt="" className="rounded-2xl" />
                 </div>
-                <div className="blogdesc">
-                  <p className="blogname">{blog.title}</p>
+                <div className="blogdesc h-full flex flex-col px-3 py-1">
+                  <p className="blogdate w-max text-xs text-gray-400">
+                    {blog.date}
+                  </p>
+                  <p className="blogname font-bold text-md md:text-[.85rem]">
+                    {blog.title}
+                  </p>
 
-                  <p className="blogdate">{blog.date}</p>
-                  <div className="blogsmall">{blog.displayIntro}</div>
-                  <span className="blogbutton">View</span>
+                  <div className="blogsmall text-xs mt-3">
+                    {blog.displayIntro}
+                  </div>
+                  <span className="blogbutton text-xs mt-3 mb-3 mr-auto">
+                    Read More <i className="ri-arrow-right-line"></i>
+                  </span>
                 </div>
               </Link>
             );
           })}
         </div>
-
-        {/* second blog */}
-        <div id="secondblog">{/* blog1 */}</div>
       </div>
     </section>
   );
