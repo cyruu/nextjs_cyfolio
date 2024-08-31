@@ -7,7 +7,7 @@ const Home = () => {
     <>
       <section
         id="home"
-        className="min-h-[90vh] flex justify-center items-center overflow-hidden mt-[10vh]"
+        className=" min-h-[90vh] flex justify-center items-center overflow-hidden mt-[10vh]"
       >
         <div
           id="intro-pic"

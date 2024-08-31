@@ -27,22 +27,13 @@
   /* transition-delay: 0.45s; */
 }
 
-.resumebutton {
-  margin: auto;
-  padding: 10px 15px;
-}
 @media only screen and (max-width: 640px) {
   body {
     overflow-x: hidden;
   }
-
   .skill {
     height: 40px;
     width: 40px;
     margin: 10px 7px;
-  }
-
-  .resume a {
-    font-size: 0.85rem;
   }
 }

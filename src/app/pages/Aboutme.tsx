@@ -88,7 +88,7 @@ function AboutMe() {
   return (
     <section
       id="aboutme"
-      className="flex min-h-[90vh] justify-center flex-col items-center overflow-hidden text-center"
+      className="flex min-h-[90vh] justify-center flex-col items-center text-center"
     >
       <div
         id="who"
@@ -97,12 +97,15 @@ function AboutMe() {
         {/* first */}
         <p
           id="abouttext"
-          className="font-bold text-2xl my-6 text-gray-600 mb-8 transition-all duration-600 ease-out md:text-3xl"
+          className="font-bold text-2xl mb-8 text-gray-600 transition-all duration-600 ease-out md:text-3xl"
         >
           Who am I?
         </p>
         {/* second */}
-        <p id="aboutpara" className="w-[95%] text-xs md:w-[70%] md:text-md">
+        <p
+          id="aboutpara"
+          className="w-[95%] text-xs md:w-[70%] md:text-md md:leading-4"
+        >
           Hi, I&apos;m Cyrus Maharjan and this is my portfolio website. I&apos;m
           very passionate and enthusiastic on learning how web really works. As
           of now, I&apos;m proficient in front-end development, but I plan to
@@ -122,7 +125,7 @@ function AboutMe() {
       >
         <div
           id="skills"
-          className="mt-10 mx-auto w-[95%] flex flex-wrap justify-center items-center md:w-[70%]"
+          className="my-6 mx-auto w-[95%] flex flex-wrap justify-center items-center md:w-[70%]"
         >
           <div className="skill">
             <Image src={js} alt="js" className="" />
@@ -159,14 +162,14 @@ function AboutMe() {
           </div>
         </div>
         <div className="resume flex flex-col mt-2">
-          <p className="themeColor text-xs mb-5 md:text-md">
+          <p className="themeColor text-xs md:text-md">
             Take a look at my Résumé
           </p>
           <Link
             href="/resume/CyrusResume.pdf"
             target="_blank"
             download="cyrusResume"
-            className="button resumebutton "
+            className="button resumebutton mx-auto p-2 text-md"
           >
             Résumé
             <i className="ri-download-fill ml-2"></i>
