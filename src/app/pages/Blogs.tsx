@@ -67,7 +67,7 @@ function Blog() {
         </p>
       </div>
       {/* topic ends */}
-      <div className="blogitems flex w-full md:w-[90%]">
+      <div className="blogitems flex w-full md:w-[80%]">
         {/* first blog */}
         <div
           id="firstblog"
@@ -92,7 +92,7 @@ function Blog() {
                     {blog.title}
                   </p>
 
-                  <div className="blogsmall text-xs mt-3">
+                  <div className="blogsmall text-xs mt-3 h-full">
                     {blog.displayIntro}
                   </div>
                   <span className="blogbutton text-xs mt-3 mb-3 mr-auto">
