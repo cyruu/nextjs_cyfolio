@@ -1,4 +1,4 @@
-import { Home, AboutMe, Blogs } from "@/index.js";
+import { Home, AboutMe, Blogs, Projects } from "@/index.js";
 import React, { useState, useEffect } from "react";
 // import { useParams } from "react-router";
 
@@ -15,7 +15,7 @@ function SinglePageComponent() {
     <>
       <Home />
       <AboutMe />
-      {/* <Projects /> */}
+      <Projects />
       <Blogs />
     </>
   );
