@@ -5,5 +5,15 @@ import Blogs from "@/app/pages/Blogs";
 import Projects from "@/app/pages/Projects";
 import SinglePageComponent from "@/components/SinglePageComponent";
 import { blogs } from "@/blogs/blogs.js";
+import { projects } from "@/projects/projects.js";
 
-export { SinglePageComponent, Home, Navbar, AboutMe, Blogs, Projects, blogs };
+export {
+  SinglePageComponent,
+  Home,
+  Navbar,
+  AboutMe,
+  Blogs,
+  Projects,
+  blogs,
+  projects,
+};
