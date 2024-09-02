@@ -306,7 +306,7 @@ function Navbar() {
         <button id="burgericon" className="burgericon block z-100 sm:hidden">
           <i className="ri-menu-line text-2xl burgerremixicon"></i>
         </button>
-        <div className="links hidden md:flex h-full relative">
+        <div className="links hidden h-full relative md:flex md:text-md ">
           <span
             id="activeline"
             className="absolute h-[4px] w-[100px] rounded-sm bottom-0 bg-[rgb(45,45,45)]"

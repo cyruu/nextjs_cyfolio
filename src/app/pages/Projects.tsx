@@ -77,18 +77,23 @@ function Projects() {
       >
         Projects
       </p>
-      <div className="projects flex-1 flex flex-col w-full md:w-[80%] ">
-        <div className="projectcontainer grid gap-8 place-items-center grid-cols-2 md:grid-cols-4">
+      <div className="projects flex-1 flex flex-col w-[90%] md:w-[80%] ">
+        <div className="projectcontainer grid gap-4 place-items-center grid-cols-2 md:grid-cols-4 md:gap-8">
           {projects.slice(0, noOfProjects).map((el, i) => (
-            <div className="projectitem w-[90%] h-[240px]" key={i}>
-              <div className="blogimage p-2 h-[70%]">
+            <Link
+              href={el.link}
+              target="_blank"
+              className="projectitem w-[90%] h-[250px] p-2 hover:shadow-md rounded-xl transition-all duration-400 ease-in"
+              key={i}
+            >
+              <div className="blogimage h-[50%] md:h-[60%]">
                 <Image
                   src={el.image}
                   alt=""
                   className="rounded-2xl h-full object-fill"
                 />
               </div>
-              <div className="blogdesc h-[90px] flex flex-col px-1 py-1">
+              <div className="blogdesc h-[80px] mt-2 flex flex-col">
                 <p className="blogdate w-max text-sm text-black font-bold">
                   {el.title}
                 </p>
@@ -102,26 +107,28 @@ function Projects() {
                   })}
                 </div>
 
-                <span className="blogbutton text-xs my-2">
+                <span className="blogbutton text-xs mt-1">
                   Demo <i className="ri-arrow-right-line"></i>
                 </span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
         <div className="flex justify-center py-8">
           {noOfProjects >= projects.length ? (
             <button
-              className="loadmore bg-gray-400 px-4 py-2 text-xs"
-              onClick={() => setNoOfProjects(8)}
+              className="loadmore px-4 py-2 text-xs"
+              onClick={() => setNoOfProjects(4)}
             >
+              <i className="ri-arrow-up-s-line font-bold text-md mr-2 bg-gray-200 p-2 rounded-full"></i>
               Show Less
             </button>
           ) : (
             <button
-              className="loadmore bg-gray-400 px-4 py-2 text-xs"
+              className="loadmore px-4 py-2 text-xs"
               onClick={() => setNoOfProjects((prev) => prev + 4)}
             >
+              <i className="ri-arrow-down-s-line font-bold text-md mr-2 bg-gray-200 p-2 rounded-full"></i>
               Show More
             </button>
           )}
