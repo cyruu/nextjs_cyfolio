@@ -77,13 +77,13 @@ function Projects() {
       >
         Projects
       </p>
-      <div className="projects flex-1 flex flex-col w-[90%] md:w-[80%] ">
+      <div className="projects flex-1 flex flex-col w-[95%] md:w-[80%] ">
         <div className="projectcontainer grid gap-4 place-items-center grid-cols-2 md:grid-cols-4 md:gap-8">
           {projects.slice(0, noOfProjects).map((el, i) => (
             <Link
               href={el.link}
               target="_blank"
-              className="projectitem w-[90%] h-[250px] p-2 hover:shadow-md rounded-xl transition-all duration-400 ease-in"
+              className="projectitem w-[90%] h-[210px] p-2 hover:shadow-md rounded-xl transition-all duration-400 ease-in md:h-[250px]"
               key={i}
             >
               <div className="blogimage h-[50%] md:h-[60%]">
@@ -125,7 +125,7 @@ function Projects() {
             </button>
           ) : (
             <button
-              className="loadmore px-4 py-2 text-xs"
+              className="loadmore px-4 py-2 text-xs "
               onClick={() => setNoOfProjects((prev) => prev + 4)}
             >
               <i className="ri-arrow-down-s-line font-bold text-md mr-2 bg-gray-200 p-2 rounded-full"></i>
