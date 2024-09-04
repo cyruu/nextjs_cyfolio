@@ -325,19 +325,19 @@ function Navbar() {
             id="activeline"
             className="absolute h-[4px] w-[100px] rounded-sm bottom-0 bg-[rgb(45,45,45)]"
           ></span>
-          <Link href="/" id="0" className="eachlink">
+          <button id="0" className="eachlink">
             Home <span className="line"></span>
-          </Link>
-          <Link href="/aboutme" id="1" className="eachlink">
+          </button>
+          <button id="1" className="eachlink">
             About Me <span className="line"></span>
-          </Link>
-          <Link href="/projects" id="2" className="eachlink">
+          </button>
+          <button id="2" className="eachlink">
             Projects <span className="line"></span>
-          </Link>
-          <Link href="/blog" id="3" className="eachlink">
+          </button>
+          <button id="3" className="eachlink">
             My Blog <span className="line"></span>
             <span id="blogline"></span>
-          </Link>
+          </button>
         </div>
       </nav>
     </>
