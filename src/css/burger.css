@@ -1,0 +1,19 @@
+.showBurgerMenu {
+  left: 20%;
+}
+.burgerlink {
+  font-size: 1.3rem;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.burgersocialicon {
+  font-size: 1.8rem;
+  border-radius: 50%;
+  padding: 5px 10px;
+  background-color: white;
+  color: rgb(45, 45, 45);
+  margin: 0 0.6rem;
+}

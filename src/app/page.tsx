@@ -1,4 +1,4 @@
-import { Navbar, SinglePageComponent } from "@/index.js";
+import { Footer, Navbar, SinglePageComponent } from "@/index.js";
 
 import React from "react";
 
@@ -7,6 +7,7 @@ const Index = () => {
     <>
       <Navbar />
       <SinglePageComponent />
+      <Footer />
     </>
   );
 };

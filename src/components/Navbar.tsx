@@ -1,6 +1,9 @@
 // import React, { useEffect, useState } from "react";
+"use client";
 // import { Link, useNavigate, useLocation } from "react-router-dom";
 import Link from "next/link";
+import { useEffect } from "react";
+import "@/css/burger.css";
 function Navbar() {
   //   const { pathname } = useLocation();
   //   const [homesectionTopPixel, setHomeSectionTopPixel] = useState(0);
@@ -228,14 +231,19 @@ function Navbar() {
   //       top: scrollPixel,
   //     });
   //   };
+  function toggleBurgerMenu() {
+    const burgerMenu = document.querySelector(".burgerlinks");
+    burgerMenu?.classList.toggle("showBurgerMenu");
+  }
+  useEffect(() => {}, []);
   return (
     <>
       <nav
         id="navbar"
         className="navbar fixed top-0 z-10 text-white bg-[rgb(45,45,45)] w-full flex justify-between items-center h-[10vh] px-8 transition-all duration-200 ease-out md:px-24 md:bg-white md:text-black"
       >
-        <div className="burgermenu hidden">
-          <div className="burgerlinks">
+        <div className="burgermenu ">
+          <div className="burgerlinks h-[90vh] w-[80%] bg-[rgb(45,45,45)] fixed top-0 left-full mt-[10.1vh] flex flex-col justify-center items-center transition-all duration-400 ease-in">
             <Link
               href="/home"
               id="b0"
@@ -268,7 +276,7 @@ function Navbar() {
             >
               My Blog
             </Link>
-            <div className="burgersocials">
+            <div className="burgersocials mt-20">
               <a
                 target="_blank"
                 href="https://www.instagram.com/cyruz_maharjan/"
@@ -303,9 +311,15 @@ function Navbar() {
         <Link href="/" className="">
           <span className="logo text-3xl">Cyfolio</span>
         </Link>
-        <button id="burgericon" className="burgericon block z-100 sm:hidden">
+        {/* burger menu button */}
+        <button
+          id="burgericon"
+          className="burgericon block z-100 sm:hidden"
+          onClick={toggleBurgerMenu}
+        >
           <i className="ri-menu-line text-2xl burgerremixicon"></i>
         </button>
+        {/* main links */}
         <div className="links hidden h-full relative md:flex md:text-md ">
           <span
             id="activeline"

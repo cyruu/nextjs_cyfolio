@@ -4,6 +4,7 @@ import AboutMe from "@/app/pages/Aboutme";
 import Blogs from "@/app/pages/Blogs";
 import Projects from "@/app/pages/Projects";
 import SinglePageComponent from "@/components/SinglePageComponent";
+import Footer from "@/components/Footer";
 import { blogs } from "@/blogs/blogs.js";
 import { projects } from "@/projects/projects.js";
 
@@ -14,6 +15,7 @@ export {
   AboutMe,
   Blogs,
   Projects,
+  Footer,
   blogs,
   projects,
 };
