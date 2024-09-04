@@ -235,7 +235,40 @@ function Navbar() {
     const burgerMenu = document.querySelector(".burgerlinks");
     burgerMenu?.classList.toggle("showBurgerMenu");
   }
-  useEffect(() => {}, []);
+  useEffect(() => {
+    const activeLine = document.getElementById("activeline");
+    const homeTop: any = document
+      .getElementById("home")
+      ?.getBoundingClientRect().top;
+    const aboutmeTop: any = document
+      .getElementById("aboutme")
+      ?.getBoundingClientRect().top;
+    const projectsTop: any = document
+      .getElementById("projects")
+      ?.getBoundingClientRect().top;
+    const blogsTop: any = document
+      .getElementById("blog")
+      ?.getBoundingClientRect().top;
+
+    window.addEventListener("scroll", () => {
+      const scrolled = window.scrollY;
+      if (scrolled >= 0 && scrolled < homeTop + 370) {
+        console.log("home");
+        if (activeLine) {
+          activeLine.style.transform = "translateX(0%)";
+        }
+      } else if (scrolled >= homeTop + 370 && scrolled < aboutmeTop + 370) {
+        if (activeLine) {
+          activeLine.style.transform = "translateX(130%)";
+        }
+        console.log("about");
+      } else if (scrolled >= aboutmeTop + 370 && scrolled < projectsTop + 370) {
+        console.log("projects");
+      } else if (scrolled > projectsTop + 370) {
+        console.log("blogs");
+      }
+    });
+  }, []);
   return (
     <>
       <nav

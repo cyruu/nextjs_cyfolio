@@ -58,7 +58,12 @@ body {
   margin-right: 30px;
   overflow: hidden;
 }
-
+.homeactiveline {
+  transform: translateX(130%);
+}
+.aboutmeactiveline {
+  transform: translateX(260%);
+}
 .line {
   position: absolute;
   left: -100%;
@@ -80,7 +85,7 @@ body {
   background-color: black;
   position: absolute;
 }
-.links a:hover > .line {
+.eachlink:hover > .line {
   left: 0;
 }
 
