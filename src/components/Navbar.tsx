@@ -242,8 +242,8 @@ function Navbar() {
         id="navbar"
         className="navbar fixed top-0 z-10 text-white bg-[rgb(45,45,45)] w-full flex justify-between items-center h-[10vh] px-8 transition-all duration-200 ease-out md:px-24 md:bg-white md:text-black"
       >
-        <div className="burgermenu ">
-          <div className="burgerlinks h-[90vh] w-[80%] bg-[rgb(45,45,45)] fixed top-0 left-full mt-[10.1vh] flex flex-col justify-center items-center transition-all duration-400 ease-in">
+        <div className="burgermenu block md:hidden">
+          <div className="burgerlinks h-[90vh] w-[80%] bg-[rgb(45,45,45)] fixed top-0 left-full mt-[10vh] flex flex-col justify-center items-center transition-all duration-400 ease-in">
             <Link
               href="/home"
               id="b0"
@@ -309,7 +309,7 @@ function Navbar() {
           </div>
         </div>
         <Link href="/" className="">
-          <span className="logo text-3xl">Cyfolio</span>
+          <span className="logo text-3xl ">Cyfolio</span>
         </Link>
         {/* burger menu button */}
         <button
