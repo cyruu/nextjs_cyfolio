@@ -18,35 +18,49 @@ function SinglePageComponent() {
 
   function scrollToPage({ target }: any) {
     //giving 0
-    console.log(aboutmesectionTopPixel);
+    // console.log(aboutmesectionTopPixel);
+    let scrollDestination = 0;
     let id = target.id;
     switch (id) {
       case "0":
-        window.scrollTo({
-          top: homesectionTopPixel,
-        });
+      case "b0":
+        scrollDestination = homesectionTopPixel;
+
         break;
       case "1":
-        window.scrollTo({
-          top: aboutmesectionTopPixel,
-        });
+      case "b1":
+        scrollDestination = aboutmesectionTopPixel;
+
         break;
       case "2":
-        window.scrollTo({
-          top: projectssectionTopPixel,
-        });
+      case "b2":
+        scrollDestination = projectssectionTopPixel;
+
         break;
       case "3":
-        window.scrollTo({
-          top: blogsectionTopPixel,
-        });
+      case "b3":
+        scrollDestination = blogsectionTopPixel;
+
         break;
 
       default:
         break;
     }
+    window.scrollTo({
+      top: scrollDestination,
+    });
+    removeBurgerMenu();
   }
 
+  //remove burger menu
+  function removeBurgerMenu() {
+    const burgerMenu = document.querySelector(".burgerlinks");
+    burgerMenu?.classList.remove("showBurgerMenu");
+    const body = document.querySelector("body");
+    if (body) {
+      body.style.overflowY = "auto";
+    }
+  }
   useEffect(() => {
     if (docLoaded) {
       window.scrollTo({
@@ -56,6 +70,10 @@ function SinglePageComponent() {
       const aboutmeElement: any = document.getElementById("aboutme");
       const projectsElement: any = document.getElementById("projects");
       const blogElement: any = document.getElementById("blog");
+      const singlePageComponent: any = document.querySelector(
+        ".singlepagecomponent"
+      );
+      const eachlinks = document.querySelectorAll(".eachlink");
       if (homeElement && aboutmeElement && projectsElement && blogElement) {
         const homeTop: any =
           homeElement.getBoundingClientRect().top + window.scrollY;
@@ -71,21 +89,24 @@ function SinglePageComponent() {
         setProjectsSectionTopPixel(projectsTop - 73);
         setBlogSectionTopPixel(blogsTop - 73);
       }
-      const eachlinks = document.querySelectorAll(".eachlink");
+
       eachlinks.forEach((link) => {
         link.addEventListener("click", scrollToPage);
       });
+      singlePageComponent.addEventListener("click", removeBurgerMenu);
+
       return () => {
-        const eachlinks = document.querySelectorAll(".eachlink");
+        // const eachlinks = document.querySelectorAll(".eachlink");
         eachlinks.forEach((link) => {
           link.removeEventListener("click", scrollToPage); // Clean up listeners
         });
+        singlePageComponent.removeEventListener("click", removeBurgerMenu);
       };
     }
   }, [docLoaded, aboutmesectionTopPixel]);
 
   return (
-    <div>
+    <div className="singlepagecomponent">
       <Home />
       <AboutMe />
       <Projects />

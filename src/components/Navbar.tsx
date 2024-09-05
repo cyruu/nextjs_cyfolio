@@ -4,10 +4,22 @@
 import Link from "next/link";
 import { useEffect } from "react";
 import "@/css/burger.css";
+import Image from "next/image";
+import lgwhite from "@/images/lg_white.png";
 function Navbar() {
   function toggleBurgerMenu() {
     const burgerMenu = document.querySelector(".burgerlinks");
+    const body = document.querySelector("body");
     burgerMenu?.classList.toggle("showBurgerMenu");
+    if (burgerMenu?.classList.contains("showBurgerMenu")) {
+      if (body) {
+        body.style.overflowY = "hidden";
+      }
+    } else {
+      if (body) {
+        body.style.overflowY = "auto";
+      }
+    }
   }
   useEffect(() => {
     const activeLine = document.getElementById("activeline");
@@ -27,7 +39,7 @@ function Navbar() {
 
       window.addEventListener("scroll", () => {
         const scrolled = window.scrollY;
-        console.log(scrolled + " " + (homeTop + 370));
+        // console.log(scrolled + " " + (homeTop + 370));
 
         if (scrolled >= 0 && scrolled < homeTop + 370) {
           console.log("home");
@@ -64,38 +76,34 @@ function Navbar() {
       >
         <div className="burgermenu block md:hidden">
           <div className="burgerlinks h-[90vh] w-[80%] bg-[rgb(45,45,45)] fixed top-0 left-full mt-[10vh] flex flex-col justify-center items-center transition-all duration-400 ease-in">
-            <Link
-              href="/home"
+            <button
               id="b0"
-              className="burgerlink"
+              className="eachlink py-2"
               //   onClick={navLinkClick}
             >
               Home
-            </Link>
-            <Link
-              href="/aboutme"
+            </button>
+            <button
               id="b1"
-              className="burgerlink"
+              className="eachlink py-2"
               //   onClick={navLinkClick}
             >
               About Me
-            </Link>
-            <Link
-              href="/projects"
+            </button>
+            <button
               id="b2"
-              className="burgerlink"
+              className="eachlink py-2"
               //   onClick={navLinkClick}
             >
               Projects
-            </Link>
-            <Link
-              href="/blog"
+            </button>
+            <button
               id="b3"
-              className="burgerlink"
+              className="eachlink py-2"
               //   onClick={navLinkClick}
             >
               My Blog
-            </Link>
+            </button>
             <div className="burgersocials mt-20">
               <a
                 target="_blank"
@@ -131,6 +139,7 @@ function Navbar() {
         <Link href="/" className="">
           <span className="logo text-3xl ">Cyfolio</span>
         </Link>
+
         {/* burger menu button */}
         <button
           id="burgericon"
