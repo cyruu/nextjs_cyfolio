@@ -78,28 +78,28 @@ function Navbar() {
           <div className="burgerlinks h-[90vh] w-[80%] bg-[rgb(45,45,45)] fixed top-0 left-full mt-[10vh] flex flex-col justify-center items-center transition-all duration-400 ease-in">
             <button
               id="b0"
-              className="eachlink py-2"
+              className="eachlink burgereachlink py-2"
               //   onClick={navLinkClick}
             >
               Home
             </button>
             <button
               id="b1"
-              className="eachlink py-2"
+              className="eachlink  burgereachlink py-2"
               //   onClick={navLinkClick}
             >
               About Me
             </button>
             <button
               id="b2"
-              className="eachlink py-2"
+              className="eachlink burgereachlink  py-2"
               //   onClick={navLinkClick}
             >
               Projects
             </button>
             <button
               id="b3"
-              className="eachlink py-2"
+              className="eachlink burgereachlink py-2"
               //   onClick={navLinkClick}
             >
               My Blog

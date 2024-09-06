@@ -58,6 +58,11 @@ body {
   margin-right: 30px;
   overflow: hidden;
 }
+.burgereachlink {
+  width: 70%;
+  margin: 0;
+  font-size: 1.25rem;
+}
 .homeactiveline {
   transform: translateX(130%);
 }
