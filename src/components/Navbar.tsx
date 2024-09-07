@@ -42,7 +42,7 @@ function Navbar() {
         // console.log(scrolled + " " + (homeTop + 370));
 
         if (scrolled >= 0 && scrolled < homeTop + 370) {
-          console.log("home");
+          // console.log("home");
           if (activeLine) {
             activeLine.style.transform = "translateX(0%)";
           }
@@ -50,7 +50,7 @@ function Navbar() {
           if (activeLine) {
             activeLine.style.transform = `translateX(${1 * 130}%)`;
           }
-          console.log("about");
+          // console.log("about");
         } else if (
           scrolled >= aboutmeTop + 370 &&
           scrolled < projectsTop + 370
@@ -58,12 +58,12 @@ function Navbar() {
           if (activeLine) {
             activeLine.style.transform = `translateX(${2 * 130}%)`;
           }
-          console.log("projects");
+          // console.log("projects");
         } else if (scrolled > projectsTop + 370) {
           if (activeLine) {
             activeLine.style.transform = `translateX(${3 * 130}%)`;
           }
-          console.log("blogs");
+          // console.log("blogs");
         }
       });
     }
