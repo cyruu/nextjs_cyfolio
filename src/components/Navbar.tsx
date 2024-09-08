@@ -42,7 +42,7 @@ function Navbar() {
         // console.log(scrolled + " " + (homeTop + 370));
 
         if (scrolled >= 0 && scrolled < homeTop + 370) {
-          // console.log("home");
+          console.log("home");
           if (activeLine) {
             activeLine.style.transform = "translateX(0%)";
           }
