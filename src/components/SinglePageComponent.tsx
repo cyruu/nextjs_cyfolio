@@ -1,5 +1,5 @@
 "use client";
-import { Home, AboutMe, Blogs, Projects } from "@/index.js";
+import { Home, AboutMe, Blogs, Projects, CyShop } from "@/index.js";
 import React, { useState, useEffect } from "react";
 // import { useParams } from "react-router";
 
@@ -106,7 +106,8 @@ function SinglePageComponent() {
   }, [docLoaded, aboutmesectionTopPixel]);
 
   return (
-    <div className="singlepagecomponent">
+    <div className="singlepagecomponent relative">
+      <CyShop />
       <Home />
       <AboutMe />
       <Projects />

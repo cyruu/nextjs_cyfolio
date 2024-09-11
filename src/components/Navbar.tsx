@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import "@/css/burger.css";
 import Image from "next/image";
 import lgwhite from "@/images/lg_white.png";
+import CyShop from "./CyShop";
 function Navbar() {
   function toggleBurgerMenu() {
     const burgerMenu = document.querySelector(".burgerlinks");
@@ -166,6 +167,9 @@ function Navbar() {
           <button id="3" className="eachlink">
             My Blog <span className="line"></span>
             <span id="blogline"></span>
+          </button>
+          <button className="">
+            <CyShop />
           </button>
         </div>
       </nav>
