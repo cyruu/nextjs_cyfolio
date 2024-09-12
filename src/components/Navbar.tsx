@@ -85,10 +85,10 @@ function Navbar() {
         // change navbar scroll color in medium screen
 
         if (window.innerWidth > 640) {
-          const navbar = document.getElementById("navbar");
-          const logo = document.querySelector(".logo");
-          const eachLink = document.querySelectorAll(".eachlink");
-          const shopLink = document.getElementById("shoplink");
+          const navbar: any = document.getElementById("navbar");
+          const logo: any = document.querySelector(".logo");
+          const eachLink: any = document.querySelectorAll(".eachlink");
+          const shopLink: any = document.getElementById("shoplink");
 
           if (navbar) {
             // console.log(window.scrollY);
@@ -98,7 +98,7 @@ function Navbar() {
               navbar.style.background = "rgb(45, 45, 45)";
               if (logo && eachLink && shopLink && activeLine) {
                 logo.style.color = "white";
-                eachLink.forEach((link) => {
+                eachLink.forEach((link: any) => {
                   link.style.color = "white";
                 });
                 shopLink.style.color = "white";
@@ -112,7 +112,7 @@ function Navbar() {
 
               if (logo && eachLink && shopLink && activeLine) {
                 logo.style.color = "rgb(45, 45, 45)";
-                eachLink.forEach((link) => {
+                eachLink.forEach((link: any) => {
                   link.style.color = "rgb(45, 45, 45)";
                 });
                 shopLink.style.color = "rgb(45, 45, 45)";
