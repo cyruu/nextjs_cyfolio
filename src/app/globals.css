@@ -131,6 +131,26 @@ body {
   color: var(--faded);
 }
 
+#newtext {
+  /* animation: shake 1s ease; */
+}
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(25deg);
+  }
+  50% {
+    transform: rotate(-25deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
 /* @media only screen and (1200px<width<1300px) { */
 /* aaus */
 @media only screen and (1200px < width < 1300px) {

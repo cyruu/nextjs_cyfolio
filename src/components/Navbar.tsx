@@ -105,6 +105,7 @@ function Navbar() {
             >
               My Blog
             </button>
+
             <div className="burgersocials mt-20">
               <a
                 target="_blank"
@@ -168,9 +169,9 @@ function Navbar() {
             My Blog <span className="line"></span>
             <span id="blogline"></span>
           </button>
-          <button className="">
-            <CyShop />
-          </button>
+          {/* <button className=""> */}
+          <CyShop />
+          {/* </button>  */}
         </div>
       </nav>
     </>

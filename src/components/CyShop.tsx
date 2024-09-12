@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const CyShop = () => {
   return (
-    <div className="flex items-center bg-red-400 p-2">
-      <p className="text-md">
+    <div className="flex items-center relative">
+      <div className="text-md  px-2 py-1 rounded-xl">
         {"</"}
         <i className="ri-shopping-cart-2-line text-[1.2rem] mr-1"></i>
         {"Code>"}
-      </p>
+        <div
+          id="newtext"
+          className="absolute top-4 right-[-5px] text-[.6rem] bg-red-600 px-1 rounded-full text-white "
+        >
+          New
+        </div>
+      </div>
     </div>
   );
 };
