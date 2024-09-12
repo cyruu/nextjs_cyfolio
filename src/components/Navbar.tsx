@@ -2,13 +2,18 @@
 "use client";
 // import { Link, useNavigate, useLocation } from "react-router-dom";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "@/css/burger.css";
 import Image from "next/image";
 import lgwhite from "@/images/lg_white.png";
 import CyShop from "./CyShop";
 function Navbar() {
+  const [visited, setVisited] = useState(false);
+  function cyshopclick() {
+    setVisited(true);
+  }
   function toggleBurgerMenu() {
+    // setVisited(true);
     const burgerMenu = document.querySelector(".burgerlinks");
     const body = document.querySelector("body");
     burgerMenu?.classList.toggle("showBurgerMenu");
@@ -76,7 +81,7 @@ function Navbar() {
         className="navbar fixed top-0 z-10 text-white bg-[rgb(45,45,45)] w-full flex justify-between items-center h-[10vh] px-8 transition-all duration-200 ease-out md:px-24 md:bg-white md:text-black"
       >
         <div className="burgermenu block md:hidden">
-          <div className="burgerlinks h-[90vh] w-[80%] bg-[rgb(45,45,45)] fixed top-0 left-full mt-[10vh] flex flex-col justify-center items-center transition-all duration-400 ease-in">
+          <div className="burgerlinks h-[100vh] w-[80%] bg-[rgb(45,45,45)] fixed top-0 left-full mt-[10vh] flex flex-col justify-center items-center transition-all duration-400 ease-in">
             <button
               id="b0"
               className="eachlink burgereachlink py-2"
@@ -104,6 +109,14 @@ function Navbar() {
               //   onClick={navLinkClick}
             >
               My Blog
+            </button>
+            <button
+              id="b3"
+              className="eachlink burgereachlink py-2"
+              onClick={cyshopclick}
+              //   onClick={navLinkClick}
+            >
+              <CyShop visited={visited} />
             </button>
 
             <div className="burgersocials mt-20">
@@ -145,9 +158,15 @@ function Navbar() {
         {/* burger menu button */}
         <button
           id="burgericon"
-          className="burgericon block z-100 sm:hidden"
+          className="burgericon block z-100  relative sm:hidden"
           onClick={toggleBurgerMenu}
         >
+          {!visited ? (
+            <span className="h-3 w-3 bg-red-600 absolute right-[-4px] rounded-full"></span>
+          ) : (
+            ""
+          )}
+
           <i className="ri-menu-line text-2xl burgerremixicon"></i>
         </button>
         {/* main links */}
@@ -170,7 +189,9 @@ function Navbar() {
             <span id="blogline"></span>
           </button>
           {/* <button className=""> */}
-          <CyShop />
+          <button onClick={cyshopclick}>
+            <CyShop visited={visited} />
+          </button>
           {/* </button>  */}
         </div>
       </nav>

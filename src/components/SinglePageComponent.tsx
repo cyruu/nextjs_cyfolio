@@ -106,7 +106,7 @@ function SinglePageComponent() {
   }, [docLoaded, aboutmesectionTopPixel]);
 
   return (
-    <div className="singlepagecomponent relative">
+    <div className="singlepagecomponent">
       <CyShop />
       <Home />
       <AboutMe />
