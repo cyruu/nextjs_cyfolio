@@ -107,7 +107,6 @@ function SinglePageComponent() {
 
   return (
     <div className="singlepagecomponent">
-      <CyShop />
       <Home />
       <AboutMe />
       <Projects />

@@ -7,10 +7,13 @@ import "@/css/burger.css";
 import Image from "next/image";
 import lgwhite from "@/images/lg_white.png";
 import CyShop from "./CyShop";
+import { useRouter } from "next/navigation";
 function Navbar() {
   const [visited, setVisited] = useState(false);
+  const router = useRouter();
   function cyshopclick() {
     setVisited(true);
+    router.push("/cyshop");
   }
   function toggleBurgerMenu() {
     // setVisited(true);
