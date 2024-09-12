@@ -9,11 +9,19 @@ import lgwhite from "@/images/lg_white.png";
 import CyShop from "./CyShop";
 import { useRouter } from "next/navigation";
 function Navbar() {
-  const [visited, setVisited] = useState(false);
+  // dont show new initially
+  const [visited, setVisited] = useState(true);
   const router = useRouter();
   function cyshopclick() {
     setVisited(true);
-    router.push("/");
+    if (!visited) {
+      const date = new Date();
+      const currentDate = date.toISOString();
+      localStorage.setItem("visitedDate", currentDate);
+      router.push("/");
+    } else {
+      console.log("visited no need to update");
+    }
   }
   function toggleBurgerMenu() {
     // setVisited(true);
@@ -74,17 +82,76 @@ function Navbar() {
           }
           // console.log("blogs");
         }
+        // change navbar scroll color in medium screen
+
+        if (window.innerWidth > 640) {
+          const navbar = document.getElementById("navbar");
+          const logo = document.querySelector(".logo");
+          const eachLink = document.querySelectorAll(".eachlink");
+          const shopLink = document.getElementById("shoplink");
+
+          if (navbar) {
+            // console.log(window.scrollY);
+            // change bg colors if scroll > 150px
+            // set dark bg
+            if (window.scrollY > 150) {
+              navbar.style.background = "rgb(45, 45, 45)";
+              if (logo && eachLink && shopLink && activeLine) {
+                logo.style.color = "white";
+                eachLink.forEach((link) => {
+                  link.style.color = "white";
+                });
+                shopLink.style.color = "white";
+                activeLine.style.background = "white";
+                navbar.style.boxShadow = "3px 3px 4px rgba(0,0,0,.2)";
+              }
+            }
+            // set light bg
+            else {
+              navbar.style.background = "rgb(255, 255, 255)";
+
+              if (logo && eachLink && shopLink && activeLine) {
+                logo.style.color = "rgb(45, 45, 45)";
+                eachLink.forEach((link) => {
+                  link.style.color = "rgb(45, 45, 45)";
+                });
+                shopLink.style.color = "rgb(45, 45, 45)";
+                activeLine.style.background = "rgb(45,45,45";
+                navbar.style.boxShadow = "none";
+              }
+            }
+          }
+        }
       });
+    }
+
+    // handle visited from localstorage
+    const visitedDateLocalStorage = localStorage.getItem("visitedDate");
+    // visitedDate not found in localStorage -> (not visited)
+    if (!visitedDateLocalStorage) {
+      setVisited(false);
+      console.log("visitedDate not found in localStorage");
+    } else {
+      const visitedDate = new Date(visitedDateLocalStorage).getTime();
+      const currentDate = new Date().getTime();
+      const passedMiliseconds = currentDate - visitedDate;
+      // set not visited again
+      // console.log(passedMiliseconds);
+      if (passedMiliseconds > 15 * 1000) {
+        setVisited(false);
+      } else {
+        setVisited(true);
+      }
     }
   }, []);
   return (
     <>
       <nav
         id="navbar"
-        className="navbar fixed top-0 z-10 text-white bg-[rgb(45,45,45)] w-full flex justify-between items-center h-[10vh] px-8 transition-all duration-200 ease-out md:px-24 md:bg-white md:text-black"
+        className="navbar top-0 z-20 sticky text-white bg-[rgb(45,45,45)] w-full flex justify-between items-center h-[10vh] px-8 transition-all duration-200 ease-out md:px-24 md:bg-white md:text-black"
       >
         <div className="burgermenu block md:hidden">
-          <div className="burgerlinks h-[100vh] w-[80%] bg-[rgb(45,45,45)] fixed top-0 left-full mt-[10vh] flex flex-col justify-center items-center transition-all duration-400 ease-in">
+          <div className="burgerlinks h-[90vh] w-[80%] bg-[rgb(45,45,45)] fixed top-0 left-full mt-[10vh] flex flex-col justify-center items-center transition-all duration-400 ease-in">
             <button
               id="b0"
               className="eachlink burgereachlink py-2"
@@ -192,7 +259,11 @@ function Navbar() {
             <span id="blogline"></span>
           </button>
           {/* <button className=""> */}
-          <button onClick={cyshopclick}>
+          <button
+            onClick={cyshopclick}
+            className="text-[rgb(45,45,45)]"
+            id="shoplink"
+          >
             <CyShop visited={visited} />
           </button>
           {/* </button>  */}

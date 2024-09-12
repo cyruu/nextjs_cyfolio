@@ -1,13 +1,28 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import "@/css/home.css";
 import Image from "next/image";
 import profile from "@/images/profile.jpg";
 const Home = () => {
+  const [projectTop, setProjectTop] = useState(0);
+  useEffect(() => {
+    const projectsElement: any = document.getElementById("projects");
+    if (projectsElement) {
+      const projectsTop: any =
+        projectsElement.getBoundingClientRect().top + window.scrollY;
+      setProjectTop(projectsTop - 73);
+    }
+  }, []);
+  function scrollToProjects() {
+    window.scrollTo({
+      top: projectTop,
+    });
+  }
   return (
     <>
       <section
         id="home"
-        className="h-[90vh] mt-[5vh] flex justify-center items-center overflow-hidden"
+        className="h-[90vh] mt-[0vh] flex justify-center items-center overflow-hidden"
       >
         <div className="container flex flex-col items-center">
           <div
@@ -74,6 +89,7 @@ const Home = () => {
                   src={profile}
                   className="w-full h-full "
                   alt="profile-image"
+                  priority
                 />
               </div>
               <div className="under hidden relative md:flex">
@@ -97,10 +113,10 @@ const Home = () => {
                 Extremely delighted to share my portfolio with you.
               </p>
               <div className="buttons flex">
-                <a href="#projects" className="button text-md">
+                <button className="button text-md" onClick={scrollToProjects}>
                   <span>My Projects</span>
                   <i className="ri-arrow-right-line ml-2"></i>
-                </a>
+                </button>
               </div>
             </div>
           </div>
