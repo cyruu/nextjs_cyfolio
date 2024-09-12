@@ -13,7 +13,7 @@ function Navbar() {
   const router = useRouter();
   function cyshopclick() {
     setVisited(true);
-    router.push("/cyshop");
+    router.push("/");
   }
   function toggleBurgerMenu() {
     // setVisited(true);
