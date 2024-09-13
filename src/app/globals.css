@@ -80,7 +80,9 @@ body {
   bottom: 0px;
   transition: all 0.2s linear;
 }
-
+#insideblogline {
+  transform: translateX(100%);
+}
 #blogline {
   height: 4px;
   bottom: 0px;

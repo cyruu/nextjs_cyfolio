@@ -148,7 +148,7 @@ function Navbar() {
     <>
       <nav
         id="navbar"
-        className="navbar top-0 z-20 sticky text-white bg-[rgb(45,45,45)] w-full flex justify-between items-center h-[10vh] px-8 transition-all duration-200 ease-out md:px-24 md:bg-white md:text-black"
+        className="navbar top-0 z-20 fixed text-white bg-[rgb(45,45,45)] w-full flex justify-between items-center h-[10vh] px-8 transition-all duration-200 ease-out md:px-24 md:bg-white md:text-black"
       >
         <div className="burgermenu block md:hidden">
           <div className="burgerlinks h-[90vh] w-[80%] bg-[rgb(45,45,45)] fixed top-0 left-full mt-[10vh] flex flex-col justify-center items-center transition-all duration-400 ease-in">

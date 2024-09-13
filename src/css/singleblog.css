@@ -1,0 +1,176 @@
+html {
+  overflow-x: hidden;
+}
+#singleBlogContainer {
+  min-height: 90vh;
+  width: 100vw;
+  /* background-color: red; */
+  padding: 50px 0;
+  margin-top: 10vh;
+}
+.blogContainer {
+  width: 70%;
+  /* background-color: blue; */
+  margin: auto;
+}
+.blogtitle {
+  width: 85%;
+  text-align: center;
+  font-size: 1.9rem;
+  /* margin: 20px auto; */
+  margin-inline: auto;
+  font-weight: bold;
+}
+.singleblogdate {
+  display: flex;
+  justify-content: center;
+  color: gray;
+  font-size: 0.9rem;
+}
+.introduction {
+  width: 85%;
+  text-align: left;
+  margin: 30px auto 0px;
+  font-size: 0.9rem;
+}
+.ytvideo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0px 0px;
+}
+.thumbnail {
+  width: 50%;
+  margin: 1.5rem auto;
+}
+.indexhtml,
+.stylecss,
+.scriptjs {
+  font-size: 0.9rem;
+  margin: 1rem 0 1.5rem;
+  position: relative;
+}
+.bold {
+  font-weight: bold;
+}
+.fa-copy {
+  padding: 10px;
+  font-size: 1.7rem;
+  color: white;
+}
+.codeSection {
+  width: 100%;
+}
+#copyhtml,
+#copycss,
+#copyjs {
+  border: 1px solid white;
+  position: absolute;
+  border-radius: 10px;
+  transform: translate(600px, 70px);
+  /* top: 250%;
+    right: 32%; */
+}
+#csscopied,
+#htmlcopied,
+#jscopied {
+  bottom: -30px;
+  left: -5px;
+  position: absolute;
+  opacity: 0;
+  color: white;
+}
+.ytvideo iframe {
+  height: 315px;
+  width: 560px;
+}
+.fa-copy {
+  padding: 10px;
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+.displaynone {
+  display: none;
+}
+@media only screen and (1200px < width < 1300px) {
+  #copyhtml,
+  #copycss,
+  #copyjs {
+    transform: translate(480px, 70px);
+  }
+}
+@media only screen and (max-width: 431px) {
+  #singleBlogContainer {
+    width: 100vw;
+  }
+  .fa-copy {
+    padding: 10px;
+    font-size: 0.5rem;
+  }
+  .thumbnail {
+    width: 80%;
+    margin: 1rem auto;
+  }
+  #copyhtml,
+  #copycss,
+  #copyjs {
+    border: 1px solid white;
+    position: absolute;
+    border-radius: 8px;
+    transform: translate(-10px, 55px);
+    /* top: 250%;
+    right: 32%; */
+  }
+  .codeSection {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .blogContainer {
+    width: 100%;
+    /* background-color: blue; */
+    margin: auto;
+  }
+
+  .blogtitle {
+    font-size: 1.3rem;
+  }
+
+  .blogdate {
+    display: flex;
+    justify-content: center;
+    color: gray;
+
+    font-size: 0.7rem;
+  }
+  .introduction {
+    font-size: 0.8rem;
+    margin: 20px auto 0px;
+  }
+  .ytvideo iframe {
+    width: 90%;
+    height: 230px;
+  }
+  .indexhtml,
+  .stylecss,
+  .scriptjs {
+    font-size: 0.8rem;
+    margin: 15px 25px;
+  }
+  #copycss,
+  #copyhtml,
+  #copyjs {
+    top: 13%;
+    right: 10%;
+  }
+  .fa-copy {
+    font-size: 0.9rem;
+  }
+  .links {
+    display: none;
+  }
+  .logo {
+    font-size: 1.7rem;
+    margin: 0px 0px 0px 35px;
+  }
+}

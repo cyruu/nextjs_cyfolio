@@ -76,7 +76,7 @@ function Blog() {
           {blogs.map((blog) => {
             return (
               <Link
-                href={`/blog/${blog.id}`}
+                href={`/blogs/${blog.id}`}
                 rel="noopener noreferrer"
                 className="blogitem flex flex-col w-[80%] h-full rounded-2xl overflow-hidden transition-all duration-200 ease-in hover:shadow-md "
                 key={blog.id}
