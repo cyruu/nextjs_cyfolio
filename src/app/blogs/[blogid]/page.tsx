@@ -281,7 +281,13 @@
 import React from "react";
 
 const SingleBlog = ({ params }: any) => {
-  return <div className="mt-[10vh] min-h-[90vh]">{params.blogid}s</div>;
+  return (
+    <>
+      <div className="mt-[10vh] min-h-[90vh]">{params.blogid}</div>
+      <div className="mt-[10vh] min-h-[90vh]">{params.blogid}</div>
+      <div className="mt-[10vh] min-h-[90vh]">{params.blogid}</div>
+    </>
+  );
 };
 
 export default SingleBlog;

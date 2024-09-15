@@ -8,10 +8,12 @@ import Image from "next/image";
 import lgwhite from "@/images/lg_white.png";
 import CyShop from "./CyShop";
 import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 function Navbar() {
   // dont show new initially
   const [visited, setVisited] = useState(true);
   const router = useRouter();
+  const pathname = usePathname();
   function cyshopclick() {
     setVisited(true);
     if (!visited) {
@@ -143,7 +145,8 @@ function Navbar() {
         setVisited(true);
       }
     }
-  }, []);
+    console.log("path: ", pathname);
+  }, [pathname]);
   return (
     <>
       <nav
