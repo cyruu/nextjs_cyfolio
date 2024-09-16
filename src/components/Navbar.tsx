@@ -145,6 +145,8 @@ function Navbar() {
         setVisited(true);
       }
     }
+  }, []);
+  useEffect(() => {
     console.log("path: ", pathname);
   }, [pathname]);
   return (
