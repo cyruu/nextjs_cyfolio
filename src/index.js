@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import AboutMe from "@/app/pages/Aboutme";
 import Blogs from "@/app/pages/Blogs";
 import Projects from "@/app/pages/Projects";
+
 import CyShop from "./components/CyShop";
 import SinglePageComponent from "@/components/SinglePageComponent";
 import Footer from "@/components/Footer";

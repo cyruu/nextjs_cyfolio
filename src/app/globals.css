@@ -80,7 +80,11 @@ body {
   bottom: 0px;
   transition: all 0.2s linear;
 }
-#insideblogline {
+#insidecyshopline {
+  width: 110px;
+}
+#insideblogline,
+#insidecyshopline {
   transform: translateX(100%);
 }
 #blogline {

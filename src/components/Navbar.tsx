@@ -12,6 +12,11 @@ import { usePathname } from "next/navigation";
 function Navbar() {
   // dont show new initially
   const [visited, setVisited] = useState(true);
+  const [docLoaded, setDocLoaded] = useState(false);
+  const [homesectionTopPixel, setHomeSectionTopPixel] = useState(0);
+  const [aboutmesectionTopPixel, setAboutmeSectionTopPixel] = useState(0);
+  const [projectssectionTopPixel, setProjectsSectionTopPixel] = useState(0);
+  const [blogsectionTopPixel, setBlogSectionTopPixel] = useState(0);
   const router = useRouter();
   const pathname = usePathname();
   function cyshopclick() {
@@ -20,9 +25,56 @@ function Navbar() {
       const date = new Date();
       const currentDate = date.toISOString();
       localStorage.setItem("visitedDate", currentDate);
-      router.push("/");
     } else {
       console.log("visited no need to update");
+    }
+    router.push("/cyshop");
+  }
+  function gotoHomeRoute() {
+    router.push("/");
+  }
+  function scrollToPage({ target }: any) {
+    //giving 0
+    console.log("scrolling");
+    let scrollDestination = 0;
+    let id = target.id;
+    switch (id) {
+      case "0":
+      case "b0":
+        scrollDestination = homesectionTopPixel;
+
+        break;
+      case "1":
+      case "b1":
+        scrollDestination = aboutmesectionTopPixel;
+
+        break;
+      case "2":
+      case "b2":
+        scrollDestination = projectssectionTopPixel;
+
+        break;
+      case "3":
+      case "b3":
+        scrollDestination = blogsectionTopPixel;
+
+        break;
+
+      default:
+        break;
+    }
+    window.scrollTo({
+      top: scrollDestination,
+    });
+    removeBurgerMenu();
+  }
+  //remove burger menu
+  function removeBurgerMenu() {
+    const burgerMenu = document.querySelector(".burgerlinks");
+    burgerMenu?.classList.remove("showBurgerMenu");
+    const body = document.querySelector("body");
+    if (body) {
+      body.style.overflowY = "auto";
     }
   }
   function toggleBurgerMenu() {
@@ -41,11 +93,20 @@ function Navbar() {
     }
   }
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
     const activeLine = document.getElementById("activeline");
     const homeElement: any = document.getElementById("home");
     const aboutmeElement: any = document.getElementById("aboutme");
     const projectsElement: any = document.getElementById("projects");
     const blogElement: any = document.getElementById("blog");
+    const eachlinks = document.querySelectorAll(".eachlink");
+    const singlePageComponent: any = document.querySelector(
+      ".singlepagecomponent"
+    );
+    // no home element in single blog site
+    // home page reload
     if (homeElement && aboutmeElement && projectsElement && blogElement) {
       const homeTop: any =
         homeElement.getBoundingClientRect().top + window.scrollY;
@@ -55,6 +116,11 @@ function Navbar() {
         projectsElement.getBoundingClientRect().top + window.scrollY;
       const blogsTop: any =
         blogElement.getBoundingClientRect().top + window.scrollY;
+
+      setHomeSectionTopPixel(homeTop - 73);
+      setAboutmeSectionTopPixel(aboutmeTop - 73);
+      setProjectsSectionTopPixel(projectsTop - 73);
+      setBlogSectionTopPixel(blogsTop - 73);
 
       window.addEventListener("scroll", () => {
         const scrolled = window.scrollY;
@@ -84,49 +150,124 @@ function Navbar() {
           }
           // console.log("blogs");
         }
-        // change navbar scroll color in medium screen
+      });
+      // scroll event end
+    } // if in home page end
+    // change navbar scroll color in medium screen
 
-        if (window.innerWidth > 640) {
-          const navbar: any = document.getElementById("navbar");
-          const logo: any = document.querySelector(".logo");
-          const eachLink: any = document.querySelectorAll(".eachlink");
-          const shopLink: any = document.getElementById("shoplink");
-
-          if (navbar) {
-            // console.log(window.scrollY);
-            // change bg colors if scroll > 150px
-            // set dark bg
-            if (window.scrollY > 150) {
-              navbar.style.background = "rgb(45, 45, 45)";
-              if (logo && eachLink && shopLink && activeLine) {
-                logo.style.color = "white";
-                eachLink.forEach((link: any) => {
-                  link.style.color = "white";
-                });
-                shopLink.style.color = "white";
-                activeLine.style.background = "white";
-                navbar.style.boxShadow = "3px 3px 4px rgba(0,0,0,.2)";
-              }
+    if (window.innerWidth > 640) {
+      const navbar: any = document.getElementById("navbar");
+      const logo: any = document.querySelector(".logo");
+      const eachLink: any = document.querySelectorAll(".eachlink");
+      const lines: any = document.querySelectorAll(".line");
+      const shopLink: any = document.getElementById("shoplink");
+      window.addEventListener("scroll", () => {
+        if (navbar) {
+          // console.log(window.scrollY);
+          // change bg colors if scroll > 150px
+          // set dark bg
+          if (window.scrollY > 150) {
+            navbar.style.background = "rgb(45, 45, 45)";
+            if (logo && eachLink && shopLink && activeLine) {
+              logo.style.color = "white";
+              eachLink.forEach((link: any) => {
+                link.style.color = "white";
+              });
+              lines.forEach((line: any) => {
+                line.style.background = "white";
+              });
+              shopLink.style.color = "white";
+              activeLine.style.background = "white";
+              navbar.style.boxShadow = "3px 3px 4px rgba(0,0,0,.2)";
             }
-            // set light bg
-            else {
-              navbar.style.background = "rgb(255, 255, 255)";
+          }
+          // set light bg
+          else {
+            navbar.style.background = "rgb(255, 255, 255)";
 
-              if (logo && eachLink && shopLink && activeLine) {
-                logo.style.color = "rgb(45, 45, 45)";
-                eachLink.forEach((link: any) => {
-                  link.style.color = "rgb(45, 45, 45)";
-                });
-                shopLink.style.color = "rgb(45, 45, 45)";
-                activeLine.style.background = "rgb(45,45,45";
-                navbar.style.boxShadow = "none";
-              }
+            if (logo && eachLink && shopLink && activeLine) {
+              logo.style.color = "rgb(45, 45, 45)";
+              eachLink.forEach((link: any) => {
+                link.style.color = "rgb(45, 45, 45)";
+              });
+              lines.forEach((line: any) => {
+                line.style.background = "rgb(45,45,45)";
+              });
+              shopLink.style.color = "rgb(45, 45, 45)";
+              activeLine.style.background = "rgb(45,45,45";
+              navbar.style.boxShadow = "none";
             }
           }
         }
       });
     }
+    eachlinks.forEach((link) => {
+      link.addEventListener("click", scrollToPage);
+    });
+    // add remove button burger if in home page
+    if (singlePageComponent) {
+      singlePageComponent.addEventListener("click", removeBurgerMenu);
+    }
 
+    // if in blog page
+    // dont show about me, projects menu and active line in
+    const homeMenu: any = document.getElementById("0");
+    const aboutMeMenu: any = document.getElementById("1");
+    const projectsMenu: any = document.getElementById("2");
+    const blogMenu: any = document.getElementById("3");
+    const insideblogline: any = document.getElementById("insideblogline");
+    const insidecyshopline: any = document.getElementById("insidecyshopline");
+    // blogs page
+    if (pathname.includes("/blogs/")) {
+      aboutMeMenu.style.display = "none";
+      projectsMenu.style.display = "none";
+      insideblogline.style.display = "block";
+      insidecyshopline.style.display = "none";
+      if (activeLine) {
+        activeLine.style.display = "none";
+      }
+      homeMenu.addEventListener("click", gotoHomeRoute);
+    }
+    //home page
+    else if (pathname == "/") {
+      homeMenu.removeEventListener("click", gotoHomeRoute);
+      aboutMeMenu.style.display = "flex";
+      projectsMenu.style.display = "flex";
+      blogMenu.style.display = "flex";
+
+      insideblogline.style.display = "none";
+      insidecyshopline.style.display = "none";
+      if (activeLine) {
+        activeLine.style.display = "block";
+      }
+    }
+    // cyshop page
+    else if (pathname == "/cyshop") {
+      insidecyshopline.style.display = "flex";
+      aboutMeMenu.style.display = "none";
+      projectsMenu.style.display = "none";
+      blogMenu.style.display = "none";
+      if (activeLine) {
+        activeLine.style.display = "none";
+      }
+      homeMenu.addEventListener("click", gotoHomeRoute);
+    }
+    //clean up
+    return () => {
+      // const eachlinks = document.querySelectorAll(".eachlink");
+      eachlinks.forEach((link) => {
+        link.removeEventListener("click", scrollToPage); // Clean up listeners
+      });
+      if (singlePageComponent) {
+        singlePageComponent.removeEventListener("click", removeBurgerMenu);
+      }
+      homeMenu.removeEventListener("click", gotoHomeRoute);
+    };
+  }, [pathname, docLoaded, aboutmesectionTopPixel]);
+
+  // local storage data
+  useEffect(() => {
+    setDocLoaded(true);
     // handle visited from localstorage
     const visitedDateLocalStorage = localStorage.getItem("visitedDate");
     // visitedDate not found in localStorage -> (not visited)
@@ -139,16 +280,13 @@ function Navbar() {
       const passedMiliseconds = currentDate - visitedDate;
       // set not visited again
       // console.log(passedMiliseconds);
-      if (passedMiliseconds > 20 * 1000) {
+      if (passedMiliseconds > 1 * 1000) {
         setVisited(false);
       } else {
         setVisited(true);
       }
     }
   }, []);
-  useEffect(() => {
-    console.log("path: ", pathname);
-  }, [pathname]);
   return (
     <>
       <nav
@@ -248,28 +386,32 @@ function Navbar() {
         <div className="links hidden h-full relative md:flex md:text-md ">
           <span
             id="activeline"
-            className="absolute h-[4px] w-[100px] rounded-sm bottom-0 bg-[rgb(45,45,45)] transition-all duration-200 ease-in"
+            className="absolute md:hidden h-[4px] w-[100px] rounded-sm bottom-0 bg-[rgb(45,45,45)] transition-all duration-200 ease-in"
           ></span>
+
           <button id="0" className="eachlink">
             Home <span className="line"></span>
           </button>
+
           <button id="1" className="eachlink">
             About Me <span className="line"></span>
           </button>
           <button id="2" className="eachlink">
-            Projects <span className="line"></span>
+            Projects<span className="line"></span>
           </button>
-          <button id="3" className="eachlink">
+          <button id="3" className="eachlink ">
             My Blog <span className="line"></span>
-            <span id="blogline"></span>
+            <span className="line"></span>
+            <span id="insideblogline" className="line"></span>
           </button>
           {/* <button className=""> */}
           <button
             onClick={cyshopclick}
-            className="text-[rgb(45,45,45)]"
+            className="text-[rgb(45,45,45)] relative"
             id="shoplink"
           >
             <CyShop visited={visited} />
+            <span id="insidecyshopline" className="line"></span>
           </button>
           {/* </button>  */}
         </div>
