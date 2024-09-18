@@ -282,11 +282,11 @@ import React from "react";
 
 const SingleBlog = ({ params }: any) => {
   return (
-    <>
+    <div className="singleblog">
       <div className="mt-[10vh] min-h-[90vh]">{params.blogid}</div>
       <div className="mt-[10vh] min-h-[90vh]">{params.blogid}</div>
       <div className="mt-[10vh] min-h-[90vh]">{params.blogid}</div>
-    </>
+    </div>
   );
 };
 

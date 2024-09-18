@@ -8,10 +8,10 @@ const CyShopPage = () => {
     });
   }, []);
   return (
-    <>
+    <div className="cyshopcontainer">
       <div className="min-h-[90vh] mt-[10vh]">CyShopPage</div>
       <div className="min-h-[90vh] mt-[10vh]">CyShopPage</div>
-    </>
+    </div>
   );
 };
 

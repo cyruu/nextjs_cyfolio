@@ -208,32 +208,53 @@ function Navbar() {
     if (singlePageComponent) {
       singlePageComponent.addEventListener("click", removeBurgerMenu);
     }
-
+    // remove logo on logo click
+    const logo: any = document.querySelector(".logobutton");
+    logo.addEventListener("click", removeBurgerMenu);
     // if in blog page
     // dont show about me, projects menu and active line in
     const homeMenu: any = document.getElementById("0");
     const aboutMeMenu: any = document.getElementById("1");
     const projectsMenu: any = document.getElementById("2");
     const blogMenu: any = document.getElementById("3");
+    const burgerhomeMenu: any = document.getElementById("b0");
+    const burgeraboutMeMenu: any = document.getElementById("b1");
+    const burgerprojectsMenu: any = document.getElementById("b2");
+    const burgerblogMenu: any = document.getElementById("b3");
     const insideblogline: any = document.getElementById("insideblogline");
     const insidecyshopline: any = document.getElementById("insidecyshopline");
+    const singleBlogContainer: any = document.querySelector(".singleblog");
+    const cyshopcontainer: any = document.querySelector(".cyshopcontainer");
     // blogs page
     if (pathname.includes("/blogs/")) {
       aboutMeMenu.style.display = "none";
       projectsMenu.style.display = "none";
+      //burger
+      burgeraboutMeMenu.style.display = "none";
+      burgerprojectsMenu.style.display = "none";
       insideblogline.style.display = "block";
       insidecyshopline.style.display = "none";
       if (activeLine) {
         activeLine.style.display = "none";
       }
+      //removeburgermenu on click outside in blog page
+      singleBlogContainer.addEventListener("click", removeBurgerMenu);
+
       homeMenu.addEventListener("click", gotoHomeRoute);
+      burgerhomeMenu.addEventListener("click", gotoHomeRoute);
+      blogMenu.removeEventListener("click", scrollToPage);
     }
     //home page
     else if (pathname == "/") {
+      burgerhomeMenu.removeEventListener("click", gotoHomeRoute);
       homeMenu.removeEventListener("click", gotoHomeRoute);
       aboutMeMenu.style.display = "flex";
       projectsMenu.style.display = "flex";
       blogMenu.style.display = "flex";
+      //burger
+      burgeraboutMeMenu.style.display = "flex";
+      burgerprojectsMenu.style.display = "flex";
+      burgerblogMenu.style.display = "flex";
 
       insideblogline.style.display = "none";
       insidecyshopline.style.display = "none";
@@ -247,10 +268,17 @@ function Navbar() {
       aboutMeMenu.style.display = "none";
       projectsMenu.style.display = "none";
       blogMenu.style.display = "none";
+      //burger
+      burgeraboutMeMenu.style.display = "none";
+      burgerprojectsMenu.style.display = "none";
+      burgerblogMenu.style.display = "none";
       if (activeLine) {
         activeLine.style.display = "none";
       }
+      //removeburgermenu on click outside in shop page
+      cyshopcontainer.addEventListener("click", removeBurgerMenu);
       homeMenu.addEventListener("click", gotoHomeRoute);
+      burgerhomeMenu.addEventListener("click", gotoHomeRoute);
     }
     //clean up
     return () => {
@@ -262,6 +290,10 @@ function Navbar() {
         singlePageComponent.removeEventListener("click", removeBurgerMenu);
       }
       homeMenu.removeEventListener("click", gotoHomeRoute);
+      burgerhomeMenu.removeEventListener("click", gotoHomeRoute);
+      cyshopcontainer?.removeEventListener("click", removeBurgerMenu);
+      singleBlogContainer?.removeEventListener("click", removeBurgerMenu);
+      logo.removeEventListener("click", removeBurgerMenu);
     };
   }, [pathname, docLoaded, aboutmesectionTopPixel]);
 
@@ -364,7 +396,7 @@ function Navbar() {
             </div>
           </div>
         </div>
-        <Link href="/" className="">
+        <Link href="/" className="logobutton">
           <span className="logo text-3xl ">Cyfolio</span>
         </Link>
 
@@ -402,7 +434,7 @@ function Navbar() {
           <button id="3" className="eachlink ">
             My Blog <span className="line"></span>
             <span className="line"></span>
-            <span id="insideblogline" className="line"></span>
+            <span id="insideblogline" className="line md:hidden"></span>
           </button>
           {/* <button className=""> */}
           <button
@@ -411,7 +443,7 @@ function Navbar() {
             id="shoplink"
           >
             <CyShop visited={visited} />
-            <span id="insidecyshopline" className="line"></span>
+            <span id="insidecyshopline" className="line md:hidden"></span>
           </button>
           {/* </button>  */}
         </div>
