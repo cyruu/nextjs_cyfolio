@@ -60,19 +60,21 @@ const SingleBlog = ({ params }: any) => {
   return (
     <div className="singleblog mt-[10vh] min-h-[90vh] pt-5 md:pt-16">
       <div className="blogcontainer w-[90%] mx-auto mb-16 md:w-[75%]">
-        <p className="blogtitle text-xl font-bold md:text-2xl">
-          {singleBlogObject.title}
-        </p>
-        <p className="singleblogdate text-xs text-gray-500 mt-1 mb-5">
-          {singleBlogObject.date} ,&nbsp;Cyrus Maharjan
-        </p>
-        <p className="firstIntroduction text-xs md:text-sm">
+        <div className="titledate py-2 sticky top-[10vh] bg-white z-20">
+          <p className="blogtitle text-xl font-bold   md:text-2xl">
+            {singleBlogObject.title}
+          </p>
+          <p className="singleblogdate text-xs text-gray-500 mt-1">
+            {singleBlogObject.date} ,&nbsp;Cyrus Maharjan
+          </p>
+        </div>
+        <p className="firstIntroduction mt-5 text-xs md:text-sm">
           {singleBlogObject.firstIntroduction}
         </p>
         {/* <div
           className={`ytvideo ${singleBlogObject.ytLink ? "" : "displaynone"}`}
         > */}
-        <div className={` ytvideo my-5 ${true ? "" : "hidden"}`}>
+        <div className={` ytvideo my-7 ${true ? "" : "hidden"}`}>
           <iframe
             className="mx-auto w-full h-[170px] md:w-[560px] md:w-[315px] md:h-[320px]"
             src={singleBlogObject.ytLink}
@@ -97,7 +99,7 @@ const SingleBlog = ({ params }: any) => {
             singleBlogObject.indexHtml ? "" : "hidden"
           }`}
         >
-          <p>
+          <p className="mb-3">
             {/* <p className={`indexhtml ${fa ? "" : "hidden"} `}> */}
             Code for <span className="font-bold">index.html</span>
             <button
@@ -129,7 +131,7 @@ const SingleBlog = ({ params }: any) => {
             singleBlogObject.css ? "" : "hidden"
           }`}
         >
-          <p>
+          <p className="mb-3 mt-5">
             Code for <span className="font-bold">styles.css</span>
             <button
               id="copycss"
@@ -160,7 +162,7 @@ const SingleBlog = ({ params }: any) => {
             singleBlogObject.js ? "" : "hidden"
           }`}
         >
-          <p>
+          <p className="mb-3 mt-5">
             Code for <span className="font-bold">script.js</span>
             <button
               id="copyjs"
