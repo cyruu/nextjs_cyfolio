@@ -6,11 +6,11 @@ export const blogs = [
   {
     id: "login-animation",
     title: "How to create login animation using HTML, CSS, JS.",
-    date: "20 March, 2024",
+    date: "20 March 2024",
     thumbnail: loginimage,
     firstIntroduction:
       "This is a simple login form animation tutorial created by using HTML, CSS and Javascript. We are going to use simple and basic syntax of Javascript to create this project.",
-    ytLink: "https://www.youtube.com/embed/eccD-uVgHnc?si=RIwxmU0eH6R1NWkq",
+    ytLink: "https://www.youtube.com/embed/eccD-uVgHnc?si=0POiW10ruOAzGXVr",
     displayIntro:
       "Learn to use simple js along with HTML and CSS. Create login form animation.",
     indexHtml: `
@@ -203,7 +203,7 @@ export const blogs = [
     title: "Navbar animation on scroll and active slider using HTML, CSS, JS.",
     date: "27 March, 2024",
     thumbnail: navbar,
-    ytLink: "https://www.youtube.com/embed/SdQUxwlpKGA?si=lItYbKPSK64Eawy5",
+    ytLink: "https://www.youtube.com/embed/SdQUxwlpKGA?si=2rW-Xv5VEyyCMVBv",
     displayIntro:
       "Changing navbar background on scroll. Also active bar slider according to current page.",
     firstIntroduction: `Learn to create a navbar with custom animation on scroll event. We will be using HTML, CSS and simple JavaScript to create this project.

@@ -122,9 +122,14 @@ body {
   /* opacity: 0; */
 }
 
-/* .image img {
-  object-fit: cover;
-} */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 
 .image {
   border: 5px solid var(--themeColor);
