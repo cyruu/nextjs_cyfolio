@@ -243,6 +243,7 @@ function Navbar() {
       homeMenu.addEventListener("click", gotoHomeRoute);
       burgerhomeMenu.addEventListener("click", gotoHomeRoute);
       blogMenu.removeEventListener("click", scrollToPage);
+      burgerhomeMenu.removeEventListener("click", scrollToPage);
     }
     //home page
     else if (pathname == "/") {
