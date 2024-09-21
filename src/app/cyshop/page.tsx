@@ -11,35 +11,55 @@ const CyShopPage = () => {
     });
   }, []);
   return (
-    <div className="cyshopcontainer min-h-[90vh] mt-[10vh]">
+    <div className="cyshopcontainer min-h-[90vh] mt-[10vh] ">
+      <div className="cyshopdescription w-[90%] mb-14 mx-auto mt-24 text-center">
+        <p className="text-xl font-bold md:text-2xl ">Get Code</p>
+        <p className="text-xs text-gray-500 mt-1 md:text-sm">
+          Here are some of my projects that i have built.
+        </p>
+      </div>
       <div
         id="firstcodesell"
-        className="mt-32 grid grid-cols-1 place-items-center gap-8 md:grid-cols-3 md:gap-0 "
+        className="w-[90%] mx-auto grid grid-cols-1 place-items-center gap-8 md:grid-cols-3 md:gap-0 "
       >
-        {codesell.map((blog) => {
+        {codesell.map((codesel) => {
           return (
             <Link
-              href={`/blogs/${blog.id}`}
+              href={`/code/${codesel.id}`}
               rel="noopener noreferrer"
-              className="blogitem flex flex-col w-[80%] h-full rounded-2xl overflow-hidden transition-all duration-200 ease-in hover:shadow-md "
-              key={blog.id}
+              className="relative codeselitem flex flex-col w-[100%] h-full rounded-2xl overflow-hidden transition-all duration-200 ease-in hover:shadow-md md:w-[80%] "
+              key={codesel.id}
             >
-              <div className="blogimage p-2">
-                <Image src={blog.thumbnail} alt="" className="rounded-2xl" />
+              <div
+                className={`banner absolute right-[-50px] top-7 bg-${codesel.theme}-600 text-white text-center w-[180px] rotate-45 py-1 text-sm md:text-md md:right-[-40px]`}
+              >
+                {codesel.tag}
               </div>
-              <div className="blogdesc h-full flex flex-col px-3 py-1">
-                {/* <p className="blogdate w-max text-xs text-gray-400">
-                  {blog.date}
-                </p> */}
-                <p className="blogname font-bold text-md md:text-[.85rem]">
-                  {blog.title}
+              <div className="codeselimage p-2">
+                <Image
+                  src={codesel.thumbnail}
+                  alt=""
+                  className="rounded-2xl "
+                />
+              </div>
+              <div className="codeseldesc h-full flex flex-col px-3 py-1">
+                <p className="codeselname font-bold text-md md:text-[.85rem]">
+                  {codesel.title}
                 </p>
 
-                {/* <div className="blogsmall text-xs mt-3 h-full">
-                  {blog.displayIntro}
-                </div> */}
-                <span className="blogbutton text-xs mt-3 mb-3 mr-auto">
-                  Read More <i className="ri-arrow-right-line"></i>
+                <div className="codeselsmall text-xs mt-1 h-full text-gray-400">
+                  {codesel.introduction}
+                </div>
+                <div className="price text-xs mt-2 h-full flex items-center">
+                  <p className="text-sm text-red-700 font-bold line-through mr-2">
+                    ${codesel.discount}
+                  </p>
+                  <p className="text-xl text-red-700 font-bold">
+                    NRs. {codesel.price}
+                  </p>
+                </div>
+                <span className="codeselbutton text-xs mt-3 mb-3 mr-auto text-red-700">
+                  Get Code <i className="ri-arrow-right-line"></i>
                 </span>
               </div>
             </Link>
