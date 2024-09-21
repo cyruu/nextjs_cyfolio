@@ -6,6 +6,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 const SingleBlog = ({ params }: any) => {
   const blogid = params.blogid;
+  const [loading, setLoading] = useState(true);
   function handleCopyText(element: any) {
     return function () {
       console.log(element, "clicked");
@@ -26,6 +27,7 @@ const SingleBlog = ({ params }: any) => {
   useEffect(() => {
     const blog = blogs.filter((blog) => blog.id == blogid);
     setSingleBlogObject(blog[0]);
+    setLoading(false);
     // clipboard
     const copycss: any = document.getElementById("copycss");
     const copyhtml: any = document.getElementById("copyhtml");
@@ -59,14 +61,19 @@ const SingleBlog = ({ params }: any) => {
   }, []);
   return (
     <div className="singleblog mt-[10vh] min-h-[90vh] pt-5 md:pt-16">
+      {loading ? <div className="loading">Loading..</div> : ""}
       <div className="blogcontainer w-[90%] mx-auto mb-16 md:w-[75%]">
-        <div className="titledate py-2 sticky top-[10vh] bg-white z-20">
+        <div className="titledate py-2 sticky top-[10vh] bg-white z-10">
           <p className="blogtitle text-xl font-bold   md:text-2xl">
             {singleBlogObject.title}
           </p>
-          <p className="singleblogdate text-xs text-gray-500 mt-1">
-            {singleBlogObject.date} ,&nbsp;Cyrus Maharjan
-          </p>
+          {singleBlogObject.date ? (
+            <p className="singleblogdate text-xs text-gray-500 mt-1">
+              singleBlogObject.date ,&nbsp;Cyrus Maharjan
+            </p>
+          ) : (
+            ""
+          )}
         </div>
         <p className="firstIntroduction mt-5 text-xs md:text-sm">
           {singleBlogObject.firstIntroduction}
@@ -76,7 +83,7 @@ const SingleBlog = ({ params }: any) => {
         > */}
         <div className={` ytvideo my-7 ${true ? "" : "hidden"}`}>
           <iframe
-            className="mx-auto w-full h-[170px] md:w-[560px] md:w-[315px] md:h-[320px]"
+            className="mx-auto w-full h-[210px] md:w-[560px] md:w-[315px] md:h-[330px]"
             src={singleBlogObject.ytLink}
             title="YouTube Video"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -99,7 +106,7 @@ const SingleBlog = ({ params }: any) => {
             singleBlogObject.indexHtml ? "" : "hidden"
           }`}
         >
-          <p className="mb-3">
+          <p className="mb-3 text-xs md:text-sm">
             {/* <p className={`indexhtml ${fa ? "" : "hidden"} `}> */}
             Code for <span className="font-bold">index.html</span>
             <button
@@ -131,7 +138,7 @@ const SingleBlog = ({ params }: any) => {
             singleBlogObject.css ? "" : "hidden"
           }`}
         >
-          <p className="mb-3 mt-5">
+          <p className="mb-3 mt-5 text-xs md:text-sm">
             Code for <span className="font-bold">styles.css</span>
             <button
               id="copycss"
@@ -162,7 +169,7 @@ const SingleBlog = ({ params }: any) => {
             singleBlogObject.js ? "" : "hidden"
           }`}
         >
-          <p className="mb-3 mt-5">
+          <p className="mb-3 mt-5 text-xs md:text-sm">
             Code for <span className="font-bold">script.js</span>
             <button
               id="copyjs"
