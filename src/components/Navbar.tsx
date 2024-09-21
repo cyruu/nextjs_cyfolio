@@ -161,6 +161,7 @@ function Navbar() {
       const eachLink: any = document.querySelectorAll(".eachlink");
       const lines: any = document.querySelectorAll(".line");
       const shopLink: any = document.getElementById("shoplink");
+
       window.addEventListener("scroll", () => {
         if (navbar) {
           // console.log(window.scrollY);
@@ -176,7 +177,7 @@ function Navbar() {
               lines.forEach((line: any) => {
                 line.style.background = "white";
               });
-              shopLink.style.color = "white";
+              // shopLink.style.color = "white";
               activeLine.style.background = "white";
               navbar.style.boxShadow = "3px 3px 4px rgba(0,0,0,.2)";
             }
@@ -266,7 +267,7 @@ function Navbar() {
     }
     // cyshop page
     else if (pathname == "/cyshop") {
-      insidecyshopline.style.display = "flex";
+      // insidecyshopline.style.display = "flex";
       aboutMeMenu.style.display = "none";
       projectsMenu.style.display = "none";
       blogMenu.style.display = "none";

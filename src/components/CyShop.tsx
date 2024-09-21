@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 
 const CyShop = ({ visited = false }) => {
   return (
-    <div className=" text-md px-2 py-1 flex items-center relative ">
+    <div className=" text-md px-2 py-1 flex items-center relative bg-[rgb(225,225,225)] rounded-full">
       {"</"}
       <i className="ri-shopping-cart-2-line text-[1.2rem] mr-1"></i>
       {"Code>"}
