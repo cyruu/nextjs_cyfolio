@@ -314,7 +314,7 @@ function Navbar() {
       const passedMiliseconds = currentDate - visitedDate;
       // set not visited again
       // console.log(passedMiliseconds);
-      if (passedMiliseconds > 1 * 1000) {
+      if (passedMiliseconds > 60 * 1000) {
         setVisited(false);
       } else {
         setVisited(true);

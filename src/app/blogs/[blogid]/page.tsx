@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import CircularProgress from "@mui/material/CircularProgress";
 import React, { useEffect, useState } from "react";
 import { blogs } from "@/index";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -60,16 +61,25 @@ const SingleBlog = ({ params }: any) => {
     };
   }, []);
   return (
-    <div className="singleblog mt-[10vh] min-h-[90vh] pt-5 md:pt-16">
-      {loading ? <div className="loading">Loading..</div> : ""}
-      <div className="blogcontainer w-[90%] mx-auto mb-16 md:w-[75%]">
+    <div className="singleblog mt-[10vh] min-h-[90vh]">
+      {loading ? (
+        <div className="loading flex items-start justify-center">
+          <div className="mt-10 flex flex-col items-center">
+            <CircularProgress sx={{ color: "gray" }} />
+            <p className="mt-3 text-gray-500">Loading...</p>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
+      <div className="blogcontainer mt-24 w-[90%] mx-auto mb-16 md:w-[75%]">
         <div className="titledate py-2 sticky top-[10vh] bg-white z-10">
           <p className="blogtitle text-xl font-bold   md:text-2xl">
             {singleBlogObject.title}
           </p>
           {singleBlogObject.date ? (
-            <p className="singleblogdate text-xs text-gray-500 mt-1">
-              singleBlogObject.date ,&nbsp;Cyrus Maharjan
+            <p className="singleblogdate text-xs text-gray-500 mt-1 ">
+              {singleBlogObject.date} ,&nbsp;Cyrus Maharjan
             </p>
           ) : (
             ""
