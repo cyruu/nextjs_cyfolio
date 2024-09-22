@@ -1,6 +1,9 @@
 .showBurgerMenu {
   left: 20%;
 }
+.showbackuplayer {
+  left: 0;
+}
 .burgerlink {
   font-size: 1.3rem;
   width: 100%;

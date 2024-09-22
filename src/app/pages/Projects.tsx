@@ -90,6 +90,7 @@ function Projects() {
                 <Image
                   src={el.image}
                   alt=""
+                  loading="lazy"
                   className="rounded-2xl h-full object-fill"
                 />
               </div>

@@ -92,7 +92,7 @@ function Blog() {
                     {blog.title}
                   </p>
 
-                  <div className="blogsmall text-xs mt-3 h-full">
+                  <div className="blogsmall text-xs mt-3 h-full text-gray-400">
                     {blog.displayIntro}
                   </div>
                   <span className="blogbutton text-xs mt-3 mb-3 mr-auto">

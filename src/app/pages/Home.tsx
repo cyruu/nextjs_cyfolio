@@ -22,7 +22,7 @@ const Home = () => {
     <>
       <section
         id="home"
-        className="h-[90vh] mt-[10vh] flex justify-center items-center overflow-hidden"
+        className="h-[80vh] mt-[10vh] flex justify-center items-center overflow-hidden md:h-[90vh]"
       >
         <div className="container flex flex-col items-center">
           <div

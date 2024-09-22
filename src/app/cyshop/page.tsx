@@ -12,7 +12,7 @@ const CyShopPage = () => {
   }, []);
   return (
     <div className="cyshopcontainer min-h-[90vh] mt-[10vh] ">
-      <div className="cyshopdescription w-[90%] mb-14 mx-auto mt-24 text-center">
+      <div className="cyshopdescription w-[90%] mb-10 mx-auto mt-32 text-center md:mt-24 md:mb-14">
         <p className="text-xl font-bold md:text-2xl ">Get Code</p>
         <p className="text-xs text-gray-500 mt-1 md:text-sm">
           Here are some of my projects that i have built.
@@ -20,7 +20,7 @@ const CyShopPage = () => {
       </div>
       <div
         id="firstcodesell"
-        className="w-[90%] mx-auto grid grid-cols-1 place-items-center gap-8 md:grid-cols-3 md:gap-0 "
+        className="w-[90%] mx-auto grid grid-cols-1 place-items-center gap-14 md:grid-cols-3 md:gap-0 "
       >
         {codesell.map((codesel) => {
           return (
@@ -31,7 +31,7 @@ const CyShopPage = () => {
               key={codesel.id}
             >
               <div
-                className={`banner absolute right-[-50px] top-7 bg-${codesel.theme}-600 text-white text-center w-[180px] rotate-45 py-1 text-sm md:text-md md:right-[-40px]`}
+                className={`banner absolute right-[-50px] top-7 bg-green-600 text-white text-center w-[180px] rotate-45 py-1 text-sm md:text-md md:right-[-40px]`}
               >
                 {codesel.tag}
               </div>
@@ -39,6 +39,7 @@ const CyShopPage = () => {
                 <Image
                   src={codesel.thumbnail}
                   alt=""
+                  loading="lazy"
                   className="rounded-2xl "
                 />
               </div>

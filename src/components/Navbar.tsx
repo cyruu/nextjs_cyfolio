@@ -71,7 +71,10 @@ function Navbar() {
   //remove burger menu
   function removeBurgerMenu() {
     const burgerMenu = document.querySelector(".burgerlinks");
+    const backupLayer = document.querySelector(".backuplayer");
+
     burgerMenu?.classList.remove("showBurgerMenu");
+    backupLayer?.classList.remove("showbackuplayer");
     const body = document.querySelector("body");
     if (body) {
       body.style.overflowY = "auto";
@@ -80,8 +83,11 @@ function Navbar() {
   function toggleBurgerMenu() {
     // setVisited(true);
     const burgerMenu = document.querySelector(".burgerlinks");
+    const backupLayer = document.querySelector(".backuplayer");
+
     const body = document.querySelector("body");
     burgerMenu?.classList.toggle("showBurgerMenu");
+    backupLayer?.classList.toggle("showbackuplayer");
     if (burgerMenu?.classList.contains("showBurgerMenu")) {
       if (body) {
         body.style.overflowY = "hidden";
@@ -212,6 +218,9 @@ function Navbar() {
     // remove logo on logo click
     const logo: any = document.querySelector(".logobutton");
     logo.addEventListener("click", removeBurgerMenu);
+    // backuplayer remove bugerlinks
+    const backupLayer = document.querySelector(".backuplayer");
+    backupLayer?.addEventListener("click", removeBurgerMenu);
     // if in blog page
     // dont show about me, projects menu and active line in
     const homeMenu: any = document.getElementById("0");
@@ -297,6 +306,8 @@ function Navbar() {
       cyshopcontainer?.removeEventListener("click", removeBurgerMenu);
       singleBlogContainer?.removeEventListener("click", removeBurgerMenu);
       logo.removeEventListener("click", removeBurgerMenu);
+      //backuplayer remove burgermenu
+      backupLayer?.removeEventListener("click", removeBurgerMenu);
     };
   }, [pathname, docLoaded, aboutmesectionTopPixel]);
 
@@ -315,7 +326,7 @@ function Navbar() {
       const passedMiliseconds = currentDate - visitedDate;
       // set not visited again
       // console.log(passedMiliseconds);
-      if (passedMiliseconds > 60 * 1000) {
+      if (passedMiliseconds > 10 * 1000) {
         setVisited(false);
       } else {
         setVisited(true);
@@ -329,7 +340,8 @@ function Navbar() {
         className="navbar top-0 z-20 fixed text-white bg-[rgb(45,45,45)] w-full flex justify-between items-center h-[10vh] px-8 transition-all duration-200 ease-out md:px-24 md:bg-white md:text-black"
       >
         <div className="burgermenu block md:hidden">
-          <div className="burgerlinks z-100 h-[90vh] w-[80%] bg-[rgb(45,45,45)] fixed top-0 left-full mt-[10vh] flex flex-col justify-center items-center transition-all duration-400 ease-in">
+          <div className="backuplayer mt-[10vh]  fixed left-full top-0 h-[90vh] w-full"></div>
+          <div className="burgerlinks z-72 h-[90vh] w-[80%] bg-[rgb(45,45,45)] fixed top-0 left-full mt-[10vh] flex flex-col justify-center items-center transition-all duration-400 ease-in">
             <button
               id="b0"
               className="eachlink burgereachlink py-2"

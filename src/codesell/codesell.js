@@ -10,7 +10,7 @@ export const codesell = [
     thumbnail: library,
     price: "10,000",
     discount: "1 Million",
-    theme: "green",
+
     tag: "PHP",
   },
   // first library system
@@ -22,7 +22,7 @@ export const codesell = [
     thumbnail: ecommerce,
     price: "3,500",
     discount: "100K",
-    theme: "blue",
+
     tag: "PHP",
   },
 ];
