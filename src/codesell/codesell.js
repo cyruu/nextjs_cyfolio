@@ -8,7 +8,7 @@ export const codesell = [
     introduction:
       "A website built in PHP and mySql database. A system along with admin pannel to mangae books and user-friendly design.",
     thumbnail: library,
-    price: "10,000",
+    price: "2,000",
     discount: "1 Million",
 
     tag: "PHP",
@@ -20,7 +20,7 @@ export const codesell = [
     introduction:
       "An ecommerce website built in HTML, CSS, PHP and mySql database. Different category of products that user can buy or sell on the website.",
     thumbnail: ecommerce,
-    price: "3,500",
+    price: "1,200",
     discount: "100K",
 
     tag: "PHP",
