@@ -21,7 +21,7 @@ export const codesell = [
       "An ecommerce website built in HTML, CSS, PHP and mySql database. Different category of products that user can buy or sell on the website.",
     thumbnail: ecommerce,
     price: "500",
-    discount: "100K",
+    discount: "250K",
 
     tag: "PHP",
   },
