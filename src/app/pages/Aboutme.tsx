@@ -102,20 +102,16 @@ function AboutMe() {
           Who am I?
         </p>
         {/* second */}
-        <p
-          id="aboutpara"
-          className="w-[95%] text-xs md:w-[70%] md:text-md md:leading-4"
-        >
+        <p id="aboutpara" className="text-xs md:text-sm">
           Hi, I&apos;m Cyrus Maharjan and this is my portfolio website. I&apos;m
-          very passionate and enthusiastic on learning how web really works. As
-          of now, I&apos;m proficient in front-end development, but I plan to
-          expand my skills to backend development.{" "}
-          <b>Gonna be full stack developer</b>.
+          very passionate and enthusiastic on learning how web really works.
+          I&apos;ve developed strong skills that allow me to build both
+          front-end and back-end functionality in a web application.
+          <br />
+          <b>Excited to take on new challenging projects in this field."</b>
           <br />
           <br />
-          <span className="themeColor text-xs md:text-md">
-            Here are some of my skills
-          </span>
+          <span className="themeColor">Here are some of my skills </span>
         </p>
       </div>
       {/* third */}
@@ -162,7 +158,7 @@ function AboutMe() {
           </div>
         </div>
         <div className="resume flex flex-col mt-2">
-          <p className="themeColor text-xs md:text-md">
+          <p className="themeColor text-xs md:text-sm">
             Take a look at my Résumé
           </p>
           <Link
