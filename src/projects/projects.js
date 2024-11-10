@@ -66,19 +66,19 @@ export const projects = [
     link: "https://react-sorting-visualisation.vercel.app/",
     tools: ["React"],
   },
-  {
-    id: "stackoverflowclone",
-    title: "Stackoverflow Clone",
-    image: stackoverflow,
-    link: "https://next-stackoverflowclone.vercel.app/",
-    tools: ["NextJS", "MongoDb", "Material UI", "Tailwind"],
-  },
+  // {
+  //   id: "stackoverflowclone",
+  //   title: "Stackoverflow Clone",
+  //   image: stackoverflow,
+  //   link: "https://next-stackoverflowclone.vercel.app/",
+  //   tools: ["NextJS", "MongoDb", "Material UI", "Tailwind"],
+  // },
   //project 8=> blogsite
-  {
-    id: "codsoftblog",
-    title: "Blog Website",
-    image: blogsite,
-    link: "https://codsoft-blog-site.vercel.app/",
-    tools: ["MERN", "Tailwind", "Material UI", "Cloudinary"],
-  },
+  // {
+  //   id: "codsoftblog",
+  //   title: "Blog Website",
+  //   image: blogsite,
+  //   link: "https://codsoft-blog-site.vercel.app/",
+  //   tools: ["MERN", "Tailwind", "Material UI", "Cloudinary"],
+  // },
 ];
