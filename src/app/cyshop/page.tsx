@@ -25,7 +25,8 @@ const CyShopPage = () => {
         {codesell.map((codesel) => {
           return (
             <Link
-              href={`/code/${codesel.id}`}
+              href={codesel.gitlink}
+              target="_blank"
               rel="noopener noreferrer"
               className="relative codeselitem flex flex-col w-[100%] h-full rounded-2xl overflow-hidden transition-all duration-200 ease-in hover:shadow-md md:w-[80%] "
               key={codesel.id}

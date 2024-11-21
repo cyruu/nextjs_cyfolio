@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import "@/css/home.css";
 import Image from "next/image";
-import profile from "@/images/profile.jpg";
+import cyprofile from "@/images/cyprofile.jpg";
 const Home = () => {
   const [projectTop, setProjectTop] = useState(0);
   useEffect(() => {
@@ -84,10 +84,10 @@ const Home = () => {
                   </a>
                 </div>
               </div>
-              <div className="image h-[310px] rounded-full overflow-hidden w-[310px] mb-8 md:h-[390px] md:w-[390px]">
+              <div className="image h-[350px] rounded-full overflow-hidden w-[350px] mb-8 md:h-[390px] md:w-[390px]">
                 <Image
-                  src={profile}
-                  className="w-full h-full "
+                  src={cyprofile}
+                  className="w-full h-full object-contain"
                   alt="profile-image"
                   priority
                 />

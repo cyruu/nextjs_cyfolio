@@ -10,7 +10,7 @@ export const codesell = [
     thumbnail: library,
     price: "1000",
     discount: "1 Million",
-
+    gitlink: "https://github.com/cyruu/php_librarySystem_snapshot",
     tag: "PHP",
   },
   // first library system
@@ -20,9 +20,9 @@ export const codesell = [
     introduction:
       "An ecommerce website built in HTML, CSS, PHP and mySql database. Different category of products that user can buy or sell on the website.",
     thumbnail: ecommerce,
-    price: "500",
+    price: "800",
     discount: "250K",
-
+    gitlink: "https://github.com/cyruu/php_ecommerce_snapshot",
     tag: "PHP",
   },
 ];

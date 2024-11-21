@@ -8,6 +8,40 @@ import stackoverflow from "../images/stackoverflow.png";
 import blogsite from "../images/blogsite.png";
 import sort from "../images/sort.png";
 export const projects = [
+  //project 8=> stackoverflowclone
+  {
+    id: "stackoverflowclone",
+    title: "Stackoverflow Clone",
+    image: stackoverflow,
+    link: "https://next-stackoverflowclone.vercel.app/",
+    tools: ["NextJS", "MongoDb", "Material UI", "Tailwind"],
+  },
+  // project 9=> blogsite
+  {
+    id: "codsoftblog",
+    title: "Blog Website",
+    image: blogsite,
+    link: "https://codsoft-blog-site.vercel.app/",
+    tools: ["MERN", "Tailwind", "Material UI", "Cloudinary"],
+  },
+
+  //project 6=> chat real time with firebase
+  {
+    id: "realtime-chat",
+    title: "RealTime Chat",
+    image: chatapp,
+    link: "https://chat-snowy-one-52.vercel.app/",
+    tools: ["React", "Firebase", "HTML", "CSS"],
+  },
+  //project 7=> stackoverflowclone
+  // need to add in database
+  {
+    id: "sortingVisualisation",
+    title: "Sorting Visualisation",
+    image: sort,
+    link: "https://react-sorting-visualisation.vercel.app/",
+    tools: ["React"],
+  },
   // project 1 => tictactoe
   {
     id: "tictactoe",
@@ -23,14 +57,6 @@ export const projects = [
     image: todo,
     link: "https://cyruu.github.io/react_TodoApplication/",
     tools: ["React", "Tailwind", "HTML", "CSS"],
-  },
-  //project 3=> cart demo
-  {
-    id: "cartDemo",
-    title: "Cart Demo",
-    image: cart,
-    link: "https://react-cart-system.vercel.app/",
-    tools: ["React", "HTML", "CSS"],
   },
   //project 4=> chat app
   {
@@ -48,37 +74,12 @@ export const projects = [
     link: "https://react-tie-sheet.vercel.app/",
     tools: ["React", "Redux", "HTML", "CSS"],
   },
-  //project 6=> chat real time with firebase
+  //project 3=> cart demo
   {
-    id: "realtime-chat",
-    title: "RealTime Chat",
-    image: chatapp,
-    link: "https://chat-snowy-one-52.vercel.app/",
-    tools: ["React", "Firebase", "HTML", "CSS"],
+    id: "cartDemo",
+    title: "Cart Demo",
+    image: cart,
+    link: "https://react-cart-system.vercel.app/",
+    tools: ["React", "HTML", "CSS"],
   },
-
-  //project 7=> stackoverflowclone
-  // need to add in database
-  {
-    id: "sortingVisualisation",
-    title: "Sorting Visualisation",
-    image: sort,
-    link: "https://react-sorting-visualisation.vercel.app/",
-    tools: ["React"],
-  },
-  // {
-  //   id: "stackoverflowclone",
-  //   title: "Stackoverflow Clone",
-  //   image: stackoverflow,
-  //   link: "https://next-stackoverflowclone.vercel.app/",
-  //   tools: ["NextJS", "MongoDb", "Material UI", "Tailwind"],
-  // },
-  //project 8=> blogsite
-  // {
-  //   id: "codsoftblog",
-  //   title: "Blog Website",
-  //   image: blogsite,
-  //   link: "https://codsoft-blog-site.vercel.app/",
-  //   tools: ["MERN", "Tailwind", "Material UI", "Cloudinary"],
-  // },
 ];

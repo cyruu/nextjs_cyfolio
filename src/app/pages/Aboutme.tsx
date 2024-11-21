@@ -102,13 +102,13 @@ function AboutMe() {
           Who am I?
         </p>
         {/* second */}
-        <p id="aboutpara" className="text-xs md:text-sm">
+        <p id="aboutpara" className="text-xs md:text-[1rem] md:leading-6">
           Hi, I&apos;m Cyrus Maharjan and this is my portfolio website. I&apos;m
           very passionate and enthusiastic on learning how web really works.
-          I&apos;ve developed strong skills that allow me to build both
-          front-end and back-end functionality in a web application.
+          I&apos;ve developed strong skills to build both front-end and back-end
+          for web applications.
           <br />
-          <b>Excited to take on new challenging projects in this field."</b>
+          <b>" Excited to take on new challenging projects in this field. "</b>
           <br />
           <br />
           <span className="themeColor">Here are some of my skills </span>

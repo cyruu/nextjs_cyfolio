@@ -132,7 +132,8 @@ body {
 }
 
 .image {
-  border: 5px solid var(--themeColor);
+  /* border: 6px solid rgb(176, 176, 176); */
+  border: 6px solid var(--themeColor);
 }
 
 .underline {
