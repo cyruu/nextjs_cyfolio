@@ -108,7 +108,10 @@ function AboutMe() {
           I&apos;ve developed strong skills to build both front-end and back-end
           for web applications.
           <br />
-          <b>" Excited to take on new challenging projects in this field. "</b>
+          <b>
+            &ldquo; Excited to take on new challenging projects in this field.
+            &ldquo;
+          </b>
           <br />
           <br />
           <span className="themeColor">Here are some of my skills </span>
