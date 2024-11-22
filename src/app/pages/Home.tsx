@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import "@/css/home.css";
 import Image from "next/image";
-import cyprofile from "@/images/cyprofile.jpg";
+import cyprofile from "@/images/profile.jpg";
 const Home = () => {
   const [projectTop, setProjectTop] = useState(0);
   useEffect(() => {
