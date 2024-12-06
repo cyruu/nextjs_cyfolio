@@ -7,6 +7,7 @@ import tieSheet from "../images/tiesheet.png";
 import stackoverflow from "../images/stackoverflow.png";
 import blogsite from "../images/blogsite.png";
 import sort from "../images/sort.png";
+import librarywebsite from "../images/librarywebsite.png";
 export const projects = [
   //project 8=> stackoverflowclone
   {
@@ -15,6 +16,18 @@ export const projects = [
     image: stackoverflow,
     link: "https://next-stackoverflowclone.vercel.app/",
     tools: ["NextJS", "MongoDb", "Material UI", "Tailwind"],
+    isready: true,
+    demovideo: false,
+  },
+  //project ...=> librarywebsite
+  {
+    id: "librarywebsite",
+    title: "Library Management System",
+    image: librarywebsite,
+    link: "/blogs/login-animation",
+    tools: ["PHP", "mySql"],
+    isready: true,
+    demovideo: true,
   },
   // project 9=> blogsite
   {
@@ -23,6 +36,8 @@ export const projects = [
     image: blogsite,
     link: "https://codsoft-blog-site.vercel.app/",
     tools: ["MERN", "Tailwind", "Material UI", "Cloudinary"],
+    isready: false,
+    demovideo: false,
   },
 
   //project 6=> chat real time with firebase
@@ -32,6 +47,8 @@ export const projects = [
     image: chatapp,
     link: "https://chat-snowy-one-52.vercel.app/",
     tools: ["React", "Firebase", "HTML", "CSS"],
+    isready: true,
+    demovideo: false,
   },
   //project 7=> stackoverflowclone
   // need to add in database
@@ -41,6 +58,8 @@ export const projects = [
     image: sort,
     link: "https://react-sorting-visualisation.vercel.app/",
     tools: ["React"],
+    isready: true,
+    demovideo: false,
   },
   // project 1 => tictactoe
   {
@@ -49,6 +68,8 @@ export const projects = [
     image: tictac,
     link: "https://tictactoetest.vercel.app/",
     tools: ["Tailwind", "React", "HTML", "CSS"],
+    isready: true,
+    demovideo: false,
   },
   //project 2=> todoApplication
   {
@@ -57,6 +78,8 @@ export const projects = [
     image: todo,
     link: "https://cyruu.github.io/react_TodoApplication/",
     tools: ["React", "Tailwind", "HTML", "CSS"],
+    isready: true,
+    demovideo: false,
   },
   //project 4=> chat app
   {
@@ -65,6 +88,8 @@ export const projects = [
     image: chat,
     link: "https://react-chat-app-wlkh.vercel.app/",
     tools: ["React", "Tailwind", "Redux", "HTML", "CSS"],
+    isready: true,
+    demovideo: false,
   },
   //project 5=> tiesheet for 4 and 8 players only
   {
@@ -73,6 +98,8 @@ export const projects = [
     image: tieSheet,
     link: "https://react-tie-sheet.vercel.app/",
     tools: ["React", "Redux", "HTML", "CSS"],
+    isready: true,
+    demovideo: false,
   },
   //project 3=> cart demo
   {
@@ -81,5 +108,7 @@ export const projects = [
     image: cart,
     link: "https://react-cart-system.vercel.app/",
     tools: ["React", "HTML", "CSS"],
+    isready: true,
+    demovideo: false,
   },
 ];

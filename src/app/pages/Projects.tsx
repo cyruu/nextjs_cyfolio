@@ -79,41 +79,87 @@ function Projects() {
       </p>
       <div className="projects flex-1 flex flex-col w-[95%] md:w-[80%] ">
         <div className="projectcontainer grid gap-4 place-items-center grid-cols-2 md:grid-cols-4 md:gap-8">
-          {projects.slice(0, noOfProjects).map((el, i) => (
-            <Link
-              href={el.link}
-              target="_blank"
-              className="projectitem w-[90%] h-[210px] p-2 hover:shadow-md rounded-xl transition-all duration-400 ease-in md:h-[250px]"
-              key={i}
-            >
-              <div className="blogimage h-[50%] md:h-[60%]">
-                <Image
-                  src={el.image}
-                  alt=""
-                  loading="lazy"
-                  className="rounded-2xl h-full object-fill"
-                />
-              </div>
-              <div className="blogdesc h-[80px] mt-2 flex flex-col">
-                <p className="blogdate w-max text-sm text-black font-bold">
-                  {el.title}
-                </p>
-                <div className="tools flex-1 flex flex-wrap  ">
-                  {el.tools.map((tool, i) => {
-                    return (
-                      <div className="tool text-xs mr-2 text-gray-400" key={i}>
-                        {tool}
-                      </div>
-                    );
-                  })}
+          {projects.slice(0, noOfProjects).map((el, i) => {
+            return el.isready ? (
+              <Link
+                href={el.link}
+                target={`${el.demovideo ? "" : "_blank"}`}
+                className="projectitem w-[90%] h-[210px] p-2 hover:shadow-md rounded-xl transition-all duration-400 ease-in md:h-[250px]"
+                key={i}
+              >
+                <div className="blogimage h-[50%] md:h-[60%]">
+                  <Image
+                    src={el.image}
+                    alt=""
+                    loading="lazy"
+                    className="rounded-2xl h-full object-fill"
+                  />
                 </div>
+                <div className="blogdesc h-[80px] mt-2 flex flex-col">
+                  <p className="blogdate w-full text-sm text-black font-bold w">
+                    {el.title}
+                  </p>
+                  <div className="tools flex-1 flex flex-wrap  ">
+                    {el.tools.map((tool, i) => {
+                      return (
+                        <div
+                          className="tool text-xs mr-2 text-gray-400"
+                          key={i}
+                        >
+                          {tool}
+                        </div>
+                      );
+                    })}
+                  </div>
 
-                <span className="blogbutton text-xs mt-1">
-                  Demo <i className="ri-arrow-right-line"></i>
-                </span>
+                  <span className="blogbutton text-xs mt-1">
+                    {el.demovideo ? "Video " : "Demo "}
+
+                    <i className="ri-arrow-right-line"></i>
+                  </span>
+                </div>
+              </Link>
+            ) : (
+              <div
+                className="projectitem isreadyitem relative cursor-pointer w-[90%] h-[210px] p-2  rounded-xl transition-all duration-400 ease-in md:h-[250px] hover:shadow-md"
+                key={i}
+              >
+                <div className="hovercontent absolute h-full w-full top-0 left-0 z-10 rounded-xl opacity-0 text-center text-md transition-all ease duration-400 flex items-center justify-center text-white font-medium md:text-xl">
+                  Currently <br /> Unavailable
+                </div>
+                <div className="blogimage h-[50%] md:h-[60%]">
+                  <Image
+                    src={el.image}
+                    alt=""
+                    loading="lazy"
+                    className="rounded-2xl h-full object-fill"
+                  />
+                </div>
+                <div className="blogdesc h-[80px] mt-2 flex flex-col">
+                  <p className="blogdate w-max text-sm text-black font-bold">
+                    {el.title}
+                  </p>
+                  <div className="tools flex-1 flex flex-wrap  ">
+                    {el.tools.map((tool, i) => {
+                      return (
+                        <div
+                          className="tool text-xs mr-2 text-gray-400"
+                          key={i}
+                        >
+                          {tool}
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  <span className="blogbutton text-xs mt-1">
+                    {el.demovideo ? "Video " : "Demo "}
+                    <i className="ri-arrow-right-line"></i>
+                  </span>
+                </div>
               </div>
-            </Link>
-          ))}
+            );
+          })}
         </div>
         <div className="flex justify-center py-8">
           {noOfProjects >= projects.length ? (

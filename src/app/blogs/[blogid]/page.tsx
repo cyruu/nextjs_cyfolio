@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import { blogs } from "@/index";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import Link from "next/link";
 const SingleBlog = ({ params }: any) => {
   const blogid = params.blogid;
   const [loading, setLoading] = useState(true);
@@ -93,7 +94,7 @@ const SingleBlog = ({ params }: any) => {
         > */}
         <div className={` ytvideo my-7 ${true ? "" : "hidden"}`}>
           <iframe
-            className="mx-auto w-full h-[210px] md:w-[560px] md:w-[315px] md:h-[330px]"
+            className="mx-auto w-full h-[210px] md:w-[560px]  md:h-[330px]"
             src={singleBlogObject.ytLink}
             title="YouTube Video"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -101,6 +102,19 @@ const SingleBlog = ({ params }: any) => {
             allowFullScreen
           ></iframe>
         </div>
+        {singleBlogObject.forsale ? (
+          <p>
+            Buy code:{" "}
+            <Link
+              href={singleBlogObject.forsale}
+              className="underline text-blue-400"
+            >
+              here
+            </Link>
+          </p>
+        ) : (
+          ""
+        )}
         {/* if no yt display thubnail */}
         {/* <div
           className={`thumbnail w-full md:w-[315px] ${

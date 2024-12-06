@@ -1,0 +1,5 @@
+/* isready hover */
+.isreadyitem:hover > .hovercontent {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.4);
+}

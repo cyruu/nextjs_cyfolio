@@ -78,13 +78,17 @@ function Blog() {
               <Link
                 href={`/blogs/${blog.id}`}
                 rel="noopener noreferrer"
-                className="blogitem flex flex-col w-[80%] h-full rounded-2xl overflow-hidden transition-all duration-200 ease-in hover:shadow-md "
+                className="blogitem flex flex-col w-[80%] h-[330px] rounded-2xl overflow-hidden transition-all duration-200 ease-in hover:shadow-md "
                 key={blog.id}
               >
-                <div className="blogimage p-2">
-                  <Image src={blog.thumbnail} alt="" className="rounded-2xl" />
+                <div className="blogimage p-2 h-full overflow-hidden ">
+                  <Image
+                    src={blog.thumbnail}
+                    alt=""
+                    className="rounded-2xl w-full h-full "
+                  />
                 </div>
-                <div className="blogdesc h-full flex flex-col px-3 py-1">
+                <div className="blogdesc flex flex-col px-3 py-1">
                   <p className="blogdate w-max text-xs text-gray-400">
                     {blog.date}
                   </p>

@@ -1,7 +1,24 @@
 import loginimage from "../images/login.png";
 import navbar from "../images/navbar.png";
 import navthumbog from "../images/navthumbog.jpg";
+import librarywebsite from "../images/librarywebsite.png";
 export const blogs = [
+  // blog... library  website
+  {
+    id: "library-website",
+    title: "Library Mangement System using PHP, mySql.",
+    date: "6 December 2024",
+    thumbnail: librarywebsite,
+    firstIntroduction:
+      "This is a library management system website created using PHP, mysql.",
+    ytLink: "https://www.youtube.com/embed/NtbgWEqZSMY?si=Fd8WrQMa365DYgW0",
+    displayIntro:
+      "Learn to use simple js along with HTML and CSS. Create login form animation.",
+    indexHtml: "",
+    css: "",
+    js: "",
+    forsale: "/cyshop",
+  },
   // blog1 login animation
   {
     id: "login-animation",
