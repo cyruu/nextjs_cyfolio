@@ -15,7 +15,13 @@ const CyShopPage = () => {
       <div className="cyshopdescription w-[90%] mb-10 mx-auto mt-32 text-center md:mt-24 md:mb-14">
         <p className="text-xl font-bold md:text-2xl ">Get Code</p>
         <p className="text-xs text-gray-500 mt-1 md:text-sm">
-          Here are some of my projects that i have built.
+          Here are some of my projects that i have built. Source code for the
+          projects are available for sale. For demo of the project you are
+          interested visit the blog page or the youtube channel. If interested,
+          you can contact via social links from the{" "}
+          <Link href="/" className="text-blue-500">
+            home page.
+          </Link>
         </p>
       </div>
       <div

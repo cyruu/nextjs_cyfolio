@@ -10,10 +10,34 @@ export const blogs = [
     date: "6 December 2024",
     thumbnail: librarywebsite,
     firstIntroduction:
-      "This is a library management system website created using PHP, mysql.",
+      "This is a library management system website created using PHP, mysql. Here in this site user can read the book in pdf format (if available in the site) and also borrow the book for a month.",
     ytLink: "https://www.youtube.com/embed/NtbgWEqZSMY?si=Fd8WrQMa365DYgW0",
+    secondIntroduction:
+      "Above demo video shows the working of the library system website. It contains all features required for user as well admin for the books. As for the user part, it includes following features:",
+    secondfeatures: [
+      "signup",
+      "login",
+      "browse via genre, date, keyword, available for borrow",
+      "notification",
+      "view borrowed books",
+      "read pdf (if available)",
+      "borrow",
+      "bookmark",
+      "pagination",
+    ],
+    thirdIntroduction:
+      "Admin dashboard open without logging in and can manage the books. Opening a dashboard.php file will open the admin page. Admin features includes:",
+    thirdfeatures: [
+      "dashboard",
+      "view book",
+      "browse via keyword",
+      "manage borrow request",
+      "edit books",
+      "add new books",
+      "reclaim the books",
+    ],
     displayIntro:
-      "Learn to use simple js along with HTML and CSS. Create login form animation.",
+      "A library system where you can read the book as pdf or borrow it from the library itself.",
     indexHtml: "",
     css: "",
     js: "",

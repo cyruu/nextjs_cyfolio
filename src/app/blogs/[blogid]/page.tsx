@@ -102,13 +102,47 @@ const SingleBlog = ({ params }: any) => {
             allowFullScreen
           ></iframe>
         </div>
+        {singleBlogObject.secondIntroduction &&
+        singleBlogObject.secondfeatures ? (
+          <>
+            {/* second intro */}
+            <p className="secondIntroduction mt-5 text-xs md:text-sm">
+              {singleBlogObject.secondIntroduction}
+            </p>
+            {/* second features */}
+            <ul className="mt-2">
+              {singleBlogObject.secondfeatures.map(
+                (feature: String, i: any) => {
+                  return <li key={i}>{feature}</li>;
+                }
+              )}
+            </ul>
+          </>
+        ) : (
+          ""
+        )}
+        {singleBlogObject.thirdIntroduction &&
+        singleBlogObject.thirdfeatures ? (
+          <>
+            {/* second intro */}
+            <p className="thirdIntroduction mt-5 text-xs md:text-sm">
+              {singleBlogObject.thirdIntroduction}
+            </p>
+            {/* second features */}
+            <ul className="mt-2">
+              {singleBlogObject.thirdfeatures.map((feature: String, i: any) => {
+                return <li key={i}>{feature}</li>;
+              })}
+            </ul>
+          </>
+        ) : (
+          ""
+        )}
+        {/* for sale */}
         {singleBlogObject.forsale ? (
           <p>
-            Buy code:{" "}
-            <Link
-              href={singleBlogObject.forsale}
-              className="underline text-blue-400"
-            >
+            Wanna buy code? Visit cyshop{" "}
+            <Link href={singleBlogObject.forsale} className="text-blue-500">
               here
             </Link>
           </p>
