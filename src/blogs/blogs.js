@@ -2,6 +2,7 @@ import loginimage from "../images/login.png";
 import navbar from "../images/navbar.png";
 import navthumbog from "../images/navthumbog.jpg";
 import librarywebsite from "../images/librarywebsite.png";
+import ecom from "../images/ecom.png";
 export const blogs = [
   // blog... library  website
   {
@@ -17,6 +18,7 @@ export const blogs = [
     secondfeatures: [
       "signup",
       "login",
+      "validation",
       "browse via genre, date, keyword, available for borrow",
       "notification",
       "view borrowed books",
@@ -42,6 +44,228 @@ export const blogs = [
     css: "",
     js: "",
     forsale: "/cyshop",
+  },
+  // blog... ecom  website
+  {
+    id: "ecom-website",
+    title: "Ecommerce website using PHP, mySql.",
+    date: "12 December 2024",
+    thumbnail: ecom,
+    firstIntroduction:
+      "A simple ecommerce website for a simple project using PHP and mySql. It consists basic ecommerce website to buy and sell the product.",
+    ytLink: "https://www.youtube.com/embed/rnOCt0bldiM?si=14Ym2uPvflKi9GY2",
+    secondIntroduction:
+      "Above demo video shows the working of the simple ecommerce website. No admin dashboard to manage the products but contains the following features:",
+    secondfeatures: [
+      "signup",
+      "login",
+      "add to cart",
+      "validation",
+      "browse via keyword",
+      "product categories",
+      "add product",
+      "remove product",
+    ],
+    displayIntro:
+      "A library system where you can read the book as pdf or borrow it from the library itself.",
+    indexHtml: "",
+    css: "",
+    js: "",
+    forsale: "/cyshop",
+  },
+  // blog2 navbar animation
+  {
+    id: "navbar-animation",
+    title: "Navbar animation on scroll and active slider using HTML, CSS, JS.",
+    date: "27 March, 2024",
+    thumbnail: navbar,
+    ytLink: "https://www.youtube.com/embed/SdQUxwlpKGA?si=2rW-Xv5VEyyCMVBv",
+    displayIntro:
+      "Changing navbar background on scroll. Also active bar slider according to current page.",
+    firstIntroduction: `Learn to create a navbar with custom animation on scroll event. We will be using HTML, CSS and simple JavaScript to create this project.
+        We will change background color of navbar and color of all links once we hit certain pixel about the next page.
+      `,
+    image: navthumbog,
+    indexHtml: `
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <nav id="navbar">
+      <div class="logo" id="navlogo">Navbar</div>
+      <div class="links">
+        <div id="line"></div>
+        <a href="#">Home</a>
+        <a href="#">Mountains</a>
+        <a href="#">Travel</a>
+      </div>
+    </nav>
+    <section id="home">
+      <p class="intothe">Into The</p>
+      <p class="mountains">Mountains</p>
+    </section>
+    <section id="mountains">
+      <p class="mountaintitle">Mountains</p>
+    </section>
+    <section id="travel">
+      <p class="traveltitle">Travel</p>
+    </section>
+  </body>
+  <script src="./script.js"></script>
+</html>    
+    `,
+    css: `
+@import url("https://fonts.googleapis.com/css2?family=Galada&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Galada&family=Paytone+One&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+#navbar {
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 0px;
+}
+.logo {
+  font-family: "Paytone One", sans-serif;
+  font-size: 2.5rem;
+  color: white;
+}
+.links {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.links a {
+  text-decoration: none;
+  margin-left: 70px;
+  font-size: 1.1rem;
+  width: 100px;
+  text-align: center;
+  color: white;
+}
+#line {
+  position: absolute;
+  bottom: 0;
+  height: 3px;
+  width: 100px;
+  background-color: white;
+  transition: all 0.3s ease;
+  transform: translateX(70px);
+}
+#home,
+#mountains,
+#travel {
+  height: 100vh;
+  width: 100%;
+}
+#home {
+  background: url("./images//mountain.jpg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.436);
+}
+#home p {
+  font-family: "Galada", cursive;
+  font-weight: 400;
+  font-size: normal;
+  margin-top: 80px;
+  font-size: 4rem;
+}
+.intothe {
+  margin-left: 180px;
+  letter-spacing: 5px;
+  margin-right: 160px;
+}
+#mountains,
+#travel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#mountains {
+  background: url("./images/mountain3.jpg");
+  background-position: center;
+  background-size: cover;
+}
+#travel {
+  background: url("./images/mountain2.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.mountaintitle,
+.traveltitle {
+  font-size: 5rem;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-family: "Galada", cursive;
+}        
+`,
+    js: `
+const navbar = document.getElementById("navbar");
+const links = document.querySelectorAll(".links a");
+const line = document.getElementById("line");
+const navlogo = document.getElementById("navlogo");
+
+const homeBottomPixel =
+  document.getElementById("home").getBoundingClientRect().bottom - 300;
+const mountainsBottomPixel =
+  document.getElementById("mountains").getBoundingClientRect().bottom - 300;
+const travelBottomPixel =
+  document.getElementById("travel").getBoundingClientRect().bottom - 300;
+
+window.addEventListener("scroll", () => {
+  let currentScrollPixel = window.scrollY;
+  //navbar
+  // change navbar
+  if (currentScrollPixel > 150) {
+    line.style.backgroundColor = "black";
+    navbar.style.backgroundColor = "rgba(255,255,255,.7)";
+    navlogo.style.color = "black";
+
+    // set all links to color white/black
+    links.forEach((link) => {
+      link.style.color = "black";
+    });
+  }
+  //   default navbar
+  else {
+    navbar.style.backgroundColor = "rgba(255,255,255,0)";
+    navlogo.style.color = "white";
+    links.forEach((link) => {
+      link.style.color = "white";
+    });
+    line.style.backgroundColor = "white";
+  }
+
+  // line slider
+  if (currentScrollPixel < homeBottomPixel) {
+    line.style.transform = "translateX(70px)";
+  } else if (
+    currentScrollPixel > homeBottomPixel &&
+    currentScrollPixel < mountainsBottomPixel
+  ) {
+    line.style.transform = "translateX(242px)";
+  } else {
+    line.style.transform = "translateX(415px)";
+  }
+});        
+`,
   },
   // blog1 login animation
   {
@@ -237,199 +461,5 @@ export const blogs = [
   }    
 `,
     js: "",
-  },
-  // blog2 navbar animation
-  {
-    id: "navbar-animation",
-    title: "Navbar animation on scroll and active slider using HTML, CSS, JS.",
-    date: "27 March, 2024",
-    thumbnail: navbar,
-    ytLink: "https://www.youtube.com/embed/SdQUxwlpKGA?si=2rW-Xv5VEyyCMVBv",
-    displayIntro:
-      "Changing navbar background on scroll. Also active bar slider according to current page.",
-    firstIntroduction: `Learn to create a navbar with custom animation on scroll event. We will be using HTML, CSS and simple JavaScript to create this project.
-        We will change background color of navbar and color of all links once we hit certain pixel about the next page.
-      `,
-    image: navthumbog,
-    indexHtml: `
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <nav id="navbar">
-      <div class="logo" id="navlogo">Navbar</div>
-      <div class="links">
-        <div id="line"></div>
-        <a href="#">Home</a>
-        <a href="#">Mountains</a>
-        <a href="#">Travel</a>
-      </div>
-    </nav>
-    <section id="home">
-      <p class="intothe">Into The</p>
-      <p class="mountains">Mountains</p>
-    </section>
-    <section id="mountains">
-      <p class="mountaintitle">Mountains</p>
-    </section>
-    <section id="travel">
-      <p class="traveltitle">Travel</p>
-    </section>
-  </body>
-  <script src="./script.js"></script>
-</html>    
-    `,
-    css: `
-@import url("https://fonts.googleapis.com/css2?family=Galada&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Galada&family=Paytone+One&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
-#navbar {
-  height: 10vh;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  position: fixed;
-  top: 0px;
-}
-.logo {
-  font-family: "Paytone One", sans-serif;
-  font-size: 2.5rem;
-  color: white;
-}
-.links {
-  position: relative;
-  display: flex;
-  align-items: center;
-  height: 100%;
-}
-.links a {
-  text-decoration: none;
-  margin-left: 70px;
-  font-size: 1.1rem;
-  width: 100px;
-  text-align: center;
-  color: white;
-}
-#line {
-  position: absolute;
-  bottom: 0;
-  height: 3px;
-  width: 100px;
-  background-color: white;
-  transition: all 0.3s ease;
-  transform: translateX(70px);
-}
-#home,
-#mountains,
-#travel {
-  height: 100vh;
-  width: 100%;
-}
-#home {
-  background: url("./images//mountain.jpg");
-  background-position: center;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: rgba(255, 255, 255, 0.436);
-}
-#home p {
-  font-family: "Galada", cursive;
-  font-weight: 400;
-  font-size: normal;
-  margin-top: 80px;
-  font-size: 4rem;
-}
-.intothe {
-  margin-left: 180px;
-  letter-spacing: 5px;
-  margin-right: 160px;
-}
-#mountains,
-#travel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-#mountains {
-  background: url("./images/mountain3.jpg");
-  background-position: center;
-  background-size: cover;
-}
-#travel {
-  background: url("./images/mountain2.jpg");
-  background-position: center;
-  background-size: cover;
-}
-.mountaintitle,
-.traveltitle {
-  font-size: 5rem;
-  color: rgb(255, 255, 255);
-  font-weight: bold;
-  font-family: "Galada", cursive;
-}        
-`,
-    js: `
-const navbar = document.getElementById("navbar");
-const links = document.querySelectorAll(".links a");
-const line = document.getElementById("line");
-const navlogo = document.getElementById("navlogo");
-
-const homeBottomPixel =
-  document.getElementById("home").getBoundingClientRect().bottom - 300;
-const mountainsBottomPixel =
-  document.getElementById("mountains").getBoundingClientRect().bottom - 300;
-const travelBottomPixel =
-  document.getElementById("travel").getBoundingClientRect().bottom - 300;
-
-window.addEventListener("scroll", () => {
-  let currentScrollPixel = window.scrollY;
-  //navbar
-  // change navbar
-  if (currentScrollPixel > 150) {
-    line.style.backgroundColor = "black";
-    navbar.style.backgroundColor = "rgba(255,255,255,.7)";
-    navlogo.style.color = "black";
-
-    // set all links to color white/black
-    links.forEach((link) => {
-      link.style.color = "black";
-    });
-  }
-  //   default navbar
-  else {
-    navbar.style.backgroundColor = "rgba(255,255,255,0)";
-    navlogo.style.color = "white";
-    links.forEach((link) => {
-      link.style.color = "white";
-    });
-    line.style.backgroundColor = "white";
-  }
-
-  // line slider
-  if (currentScrollPixel < homeBottomPixel) {
-    line.style.transform = "translateX(70px)";
-  } else if (
-    currentScrollPixel > homeBottomPixel &&
-    currentScrollPixel < mountainsBottomPixel
-  ) {
-    line.style.transform = "translateX(242px)";
-  } else {
-    line.style.transform = "translateX(415px)";
-  }
-});        
-`,
   },
 ];

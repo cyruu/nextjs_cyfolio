@@ -110,10 +110,18 @@ const SingleBlog = ({ params }: any) => {
               {singleBlogObject.secondIntroduction}
             </p>
             {/* second features */}
-            <ul className="mt-2">
+            <ul className="mt-2 mb-5">
               {singleBlogObject.secondfeatures.map(
                 (feature: String, i: any) => {
-                  return <li key={i}>{feature}</li>;
+                  return (
+                    <li key={i} className="text-xs md:text-sm">
+                      <i
+                        className="ri-circle-fill mr-2"
+                        style={{ fontSize: ".4rem" }}
+                      ></i>
+                      {feature}
+                    </li>
+                  );
                 }
               )}
             </ul>
@@ -129,9 +137,17 @@ const SingleBlog = ({ params }: any) => {
               {singleBlogObject.thirdIntroduction}
             </p>
             {/* second features */}
-            <ul className="mt-2">
+            <ul className="mt-2 mb-5">
               {singleBlogObject.thirdfeatures.map((feature: String, i: any) => {
-                return <li key={i}>{feature}</li>;
+                return (
+                  <li key={i} className="test-xs md:text-sm">
+                    <i
+                      className="ri-circle-fill mr-2"
+                      style={{ fontSize: ".4rem" }}
+                    ></i>
+                    {feature}
+                  </li>
+                );
               })}
             </ul>
           </>

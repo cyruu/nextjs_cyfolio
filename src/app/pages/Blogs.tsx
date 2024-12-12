@@ -1,10 +1,13 @@
+"use client";
 // import React, { useEffect } from "react";
 import "@/css/blogs.css";
 import { blogs } from "@/index.js";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 // import { Link } from "react-router-dom";
 function Blog() {
+  const [noOfBlogs, setnoOfBlogs] = useState(3);
   // useEffect(() => {
   //   const blogSection = document.getElementById("blog");
   //   const blogTitle = document.getElementById("blogtitle");
@@ -73,12 +76,12 @@ function Blog() {
           id="firstblog"
           className="grid grid-cols-1 place-items-center gap-8 md:grid-cols-3 md:gap-0 "
         >
-          {blogs.map((blog) => {
+          {blogs.slice(0, noOfBlogs).map((blog) => {
             return (
               <Link
                 href={`/blogs/${blog.id}`}
                 rel="noopener noreferrer"
-                className="blogitem flex flex-col w-[80%] h-[330px] rounded-2xl overflow-hidden transition-all duration-200 ease-in hover:shadow-md "
+                className="blogitem mb-0 flex flex-col w-[80%] h-[330px] rounded-2xl overflow-hidden transition-all duration-200 ease-in hover:shadow-md md:mb-7 "
                 key={blog.id}
               >
                 <div className="blogimage p-2 h-full overflow-hidden ">
@@ -107,6 +110,25 @@ function Blog() {
             );
           })}
         </div>
+      </div>
+      <div className="flex justify-center py-8">
+        {noOfBlogs >= blogs.length ? (
+          <button
+            className="loadmore px-4 py-2 text-xs"
+            onClick={() => setnoOfBlogs(3)}
+          >
+            <i className="ri-arrow-up-s-line font-bold text-md mr-2 bg-gray-200 p-2 rounded-full"></i>
+            Show Less
+          </button>
+        ) : (
+          <button
+            className="loadmore px-4 py-2 text-xs "
+            onClick={() => setnoOfBlogs((prev) => prev + 3)}
+          >
+            <i className="ri-arrow-down-s-line font-bold text-md mr-2 bg-gray-200 p-2 rounded-full"></i>
+            Show More
+          </button>
+        )}
       </div>
     </section>
   );
