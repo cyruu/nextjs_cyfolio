@@ -9,7 +9,7 @@ import Link from "next/link";
 const SingleBlog = ({ params }: any) => {
   const blogid = params.blogid;
   const [noOfBlogs, setnoOfBlogs] = useState(3);
-
+  const [ytLoading, setytLoading] = useState(true);
   const [loading, setLoading] = useState(true);
   function handleCopyText(element: any) {
     return function () {
@@ -76,6 +76,7 @@ const SingleBlog = ({ params }: any) => {
         ""
       )}
       <div className="blog-otherblogs-container relative flex  mt-24 w-[90%] mx-auto mb-16 md:w-[90%]">
+        {/* main blog container */}
         <div className="blogcontainer w-full md:w-[75%] md:pr-8 md:border-r md:border-gray-200">
           <div className="titledate py-2 sticky top-[10vh] bg-white z-10">
             <p className="blogtitle text-xl font-bold   md:text-3xl">
@@ -96,13 +97,23 @@ const SingleBlog = ({ params }: any) => {
           className={`ytvideo ${singleBlogObject.ytLink ? "" : "displaynone"}`}
         > */}
           <div className={` ytvideo my-7 ${true ? "" : "hidden"}`}>
+            {!loading && ytLoading ? (
+              <div className="mx-auto w-full h-[210px] flex items-center justify-center md:w-[560px] bg-gray-700  md:h-[330px]">
+                <CircularProgress sx={{ color: "gray" }} />
+              </div>
+            ) : (
+              ""
+            )}
             <iframe
-              className="mx-auto w-full h-[210px] md:w-[560px]  md:h-[330px]"
+              className={`mx-auto w-full h-[210px] md:w-[560px]  md:h-[330px] ${
+                ytLoading ? "hidden" : "block"
+              }`}
               src={singleBlogObject.ytLink}
               title="YouTube Video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
+              onLoad={() => setytLoading(false)}
             ></iframe>
           </div>
           {singleBlogObject.secondIntroduction &&
@@ -144,7 +155,7 @@ const SingleBlog = ({ params }: any) => {
                 {singleBlogObject.thirdfeatures.map(
                   (feature: String, i: any) => {
                     return (
-                      <li key={i} className="test-xs text-gray-500 md:text-sm">
+                      <li key={i} className="text-xs text-gray-500 md:text-sm">
                         <i
                           className="ri-circle-fill mr-2"
                           style={{ fontSize: ".4rem" }}
@@ -161,7 +172,7 @@ const SingleBlog = ({ params }: any) => {
           )}
           {/* for sale */}
           {singleBlogObject.forsale ? (
-            <p className="text-xs md:text-base">
+            <p className="text-sm md:text-base">
               Wanna buy code? Visit cyshop{" "}
               <Link href={singleBlogObject.forsale} className="text-blue-500">
                 here
@@ -275,42 +286,46 @@ const SingleBlog = ({ params }: any) => {
           </div>
         </div>
         {/* other blog list */}
-        <div className="otherblogslist hidden  w-[25%] h-max md:flex md:flex-col md:items-center">
-          {blogs.map((blog) => {
-            if (blogid != blog.id)
-              return (
-                <Link
-                  href={`/blogs/${blog.id}`}
-                  rel="noopener noreferrer"
-                  className="blogitem mb-0 flex flex-col w-[85%] h-[260px] rounded-2xl overflow-hidden transition-all duration-200 ease-in hover:shadow-md md:mb-4 "
-                  key={blog.id}
-                >
-                  <div className="blogimage p-2 h-full overflow-hidden ">
-                    <Image
-                      src={blog.thumbnail}
-                      alt=""
-                      className="rounded-2xl w-full h-full "
-                    />
-                  </div>
-                  <div className="blogdesc flex flex-col px-3 py-1">
-                    <p className="blogdate w-max text-xs text-gray-400">
-                      {blog.date}
-                    </p>
-                    <p className="blogname font-bold text-md md:text-[.85rem]">
-                      {blog.title}
-                    </p>
-                    {/* 
+        {loading ? (
+          ""
+        ) : (
+          <div className="otherblogslist hidden  w-[25%] h-max md:flex md:flex-col md:items-center">
+            {blogs.map((blog) => {
+              if (blogid != blog.id)
+                return (
+                  <Link
+                    href={`/blogs/${blog.id}`}
+                    rel="noopener noreferrer"
+                    className="blogitem mb-0 flex flex-col w-[85%] h-[260px] rounded-2xl overflow-hidden transition-all duration-200 ease-in hover:shadow-md md:mb-4 "
+                    key={blog.id}
+                  >
+                    <div className="blogimage p-2 h-full overflow-hidden ">
+                      <Image
+                        src={blog.thumbnail}
+                        alt=""
+                        className="rounded-2xl w-full h-full "
+                      />
+                    </div>
+                    <div className="blogdesc flex flex-col px-3 py-1">
+                      <p className="blogdate w-max text-xs text-gray-400">
+                        {blog.date}
+                      </p>
+                      <p className="blogname font-bold text-md md:text-[.85rem]">
+                        {blog.title}
+                      </p>
+                      {/* 
                   <div className="blogsmall text-xs mt-3 h-full text-gray-400">
                     {blog.displayIntro}
                   </div> */}
-                    <span className="blogbutton text-xs mt-3 mb-3 mr-auto">
-                      Read More <i className="ri-arrow-right-line"></i>
-                    </span>
-                  </div>
-                </Link>
-              );
-          })}
-        </div>
+                      <span className="blogbutton text-xs mt-3 mb-3 mr-auto">
+                        Read More <i className="ri-arrow-right-line"></i>
+                      </span>
+                    </div>
+                  </Link>
+                );
+            })}
+          </div>
+        )}
       </div>
     </div>
   );
