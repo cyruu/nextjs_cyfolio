@@ -24,7 +24,7 @@ export const projects = [
     id: "librarywebsite",
     title: "Library Management System",
     image: librarywebsite,
-    link: "/blogs/login-animation",
+    link: "/blogs/librarywebsite",
     tools: ["PHP", "mySql"],
     isready: true,
     demovideo: true,
