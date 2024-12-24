@@ -21,7 +21,7 @@ export const projects = [
   },
   //project ...=> librarywebsite
   {
-    id: "librarywebsite",
+    id: "library-website",
     title: "Library Management System",
     image: librarywebsite,
     link: "/blogs/librarywebsite",
