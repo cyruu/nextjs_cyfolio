@@ -167,7 +167,7 @@ function AboutMe() {
           <Link
             href="/resume/cyrusResume.pdf"
             target="_blank"
-            download="cyrusResume"
+            download="cyrusResume.pdf"
             className="button resumebutton mx-auto p-2 text-md"
           >
             Résumé
