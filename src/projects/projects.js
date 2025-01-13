@@ -8,6 +8,7 @@ import stackoverflow from "../images/stackoverflow.png";
 import blogsite from "../images/blogsite.png";
 import sort from "../images/sort.png";
 import librarywebsite from "../images/librarywebsite.png";
+import socketchat from "../images/socketchat.png";
 export const projects = [
   //project 8=> stackoverflowclone
   {
@@ -28,6 +29,16 @@ export const projects = [
     tools: ["PHP", "mySql"],
     isready: true,
     demovideo: true,
+  },
+  //project ...=> chat socket
+  {
+    id: "socket-chat",
+    title: "Chat.io",
+    image: socketchat,
+    link: "https://chat-socket-bt91.onrender.com/",
+    tools: ["Next.JS", "Socket-io"],
+    isready: true,
+    demovideo: false,
   },
   // project 9=> blogsite
   {
