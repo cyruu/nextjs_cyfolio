@@ -165,9 +165,9 @@ function AboutMe() {
             Take a look at my Résumé
           </p>
           <Link
-            href="/resume/cyrusResume.pdf"
+            href="/resume/cyrusResume1.pdf"
             target="_blank"
-            download="cyrusResume.pdf"
+            download="cyrusResume1.pdf"
             className="button resumebutton mx-auto p-2 text-md"
           >
             Résumé
