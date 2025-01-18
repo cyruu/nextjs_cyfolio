@@ -9,7 +9,18 @@ import blogsite from "../images/blogsite.png";
 import sort from "../images/sort.png";
 import librarywebsite from "../images/librarywebsite.png";
 import socketchat from "../images/socketchat.png";
+import ecomsentiment from "../images/ecom-sentiment.png";
 export const projects = [
+  //project 1=> sentiment ecom
+  {
+    id: "ecom-sentiment",
+    title: "Ecommerce with Sentiment Analysis",
+    image: ecomsentiment,
+    link: "https://ecom-deploy-fa91.onrender.com/",
+    tools: ["NextJS", "MongoDb", "Material UI", "Tailwind"],
+    isready: true,
+    demovideo: false,
+  },
   //project 8=> stackoverflowclone
   {
     id: "stackoverflowclone",
