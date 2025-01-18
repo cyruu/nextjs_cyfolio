@@ -35,7 +35,7 @@ export const projects = [
     id: "socket-chat",
     title: "Chat.io",
     image: socketchat,
-    link: "https://chat-socket-bt91.onrender.com/",
+    link: "https://chat-socket-h3wn.onrender.com/",
     tools: ["Next.JS", "Socket-io"],
     isready: true,
     demovideo: false,
