@@ -43,7 +43,8 @@ export const blogs = [
     indexHtml: "",
     css: "",
     js: "",
-    forsale: "/cyshop",
+    forsale: true,
+    price: "1000",
   },
   // blog... ecom  website
   {
@@ -71,7 +72,8 @@ export const blogs = [
     indexHtml: "",
     css: "",
     js: "",
-    forsale: "/cyshop",
+    forsale: true,
+    price: "500",
   },
   // blog2 navbar animation
   {

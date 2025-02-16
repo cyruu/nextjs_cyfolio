@@ -5,9 +5,13 @@ import React, { useEffect, useState } from "react";
 import { blogs } from "@/index";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LocalMallIcon from "@mui/icons-material/LocalMall";
 import Link from "next/link";
+import { Box, Button, Modal, TextareaAutosize, TextField } from "@mui/material";
 const SingleBlog = ({ params }: any) => {
   const blogid = params.blogid;
+  const [openBuyModal, setopenbuyModal] = useState(false);
   const [noOfBlogs, setnoOfBlogs] = useState(3);
   const [ytLoading, setytLoading] = useState(true);
   const [loading, setLoading] = useState(true);
@@ -78,16 +82,119 @@ const SingleBlog = ({ params }: any) => {
       <div className="blog-otherblogs-container relative flex  mt-24 w-[90%] mx-auto mb-16 md:w-[90%]">
         {/* main blog container */}
         <div className="blogcontainer w-full md:w-[75%] md:pr-8 md:border-r md:border-gray-200">
-          <div className="titledate py-2 sticky top-[10vh] bg-white z-10">
-            <p className="blogtitle text-xl font-bold   md:text-3xl">
-              {singleBlogObject.title}
-            </p>
-            {singleBlogObject.date ? (
-              <p className="singleblogdate text-xs text-gray-500 mt-1 ">
-                {singleBlogObject.date} ,&nbsp;Cyrus Maharjan
+          <div className="text-button sticky top-[10vh] bg-white py-2  md:flex md:items-start">
+            <div className="titledate flex-1  z-10">
+              <p className="blogtitle text-xl font-bold   md:text-3xl">
+                {singleBlogObject.title}
               </p>
-            ) : (
-              ""
+              {singleBlogObject.date ? (
+                <p className="singleblogdate text-xs text-gray-500 mt-1 ">
+                  {singleBlogObject.date} ,&nbsp;Cyrus Maharjan
+                </p>
+              ) : (
+                ""
+              )}
+            </div>
+            {singleBlogObject.forsale && (
+              <>
+                <Button
+                  variant="contained"
+                  color="success"
+                  className="my-2 text-xs md:text-[1rem] md:m-0"
+                  onClick={() => setopenbuyModal(true)}
+                >
+                  <LocalMallIcon className="mr-2" />
+                  Buy code
+                </Button>
+                <Modal
+                  open={openBuyModal}
+                  onClose={() => setopenbuyModal(false)}
+                  aria-labelledby="modal-modal-title"
+                  aria-describedby="modal-modal-description"
+                  className="flex items-center justify-center"
+                >
+                  <Box className="bg-white w-[90%]  p-4 rounded-xl md:w-[40%] md:p-8">
+                    <h1 className="text-3xl mb-3 font-bold mx-auto w-max text-gray-600">
+                      Get Your Code
+                    </h1>
+                    <p className="mx-auto w-max text-sm flex flex-col mb-8 text-gray-500 ">
+                      Recommended to contact me through
+                      <Link
+                        href="https://www.instagram.com/cyruz_maharjan/"
+                        target="_blank"
+                        className="bg-[rgba(225,48,108,0.8)] py-1 text-center mt-1 px-2 ml-1 font-medium rounded-full text-[.8rem] text-white"
+                      >
+                        <InstagramIcon className="text-[1.2rem] mr-1 mb-0.5" />
+                        cyruz_maharjan
+                      </Link>
+                    </p>
+                    <form
+                      onSubmit={() => {
+                        alert("Currently not avaliable");
+                      }}
+                      className="space-y-4"
+                    >
+                      {/* Full Name */}
+                      <TextField
+                        variant="outlined"
+                        label="Full Name"
+                        size="medium"
+                        className="w-full"
+                      />
+                      {/* Email */}
+
+                      <TextField
+                        variant="outlined"
+                        label="Email"
+                        size="medium"
+                        className="w-full"
+                      />
+
+                      {/* Selected Porject */}
+                      <TextField
+                        variant="outlined"
+                        label="Selected Project"
+                        size="medium"
+                        className="w-full"
+                        value={singleBlogObject?.title}
+                        onChange={() => {}}
+                        disabled
+                      />
+                      {/* Selected Porject */}
+                      <TextField
+                        variant="outlined"
+                        label="Price"
+                        size="medium"
+                        className="w-full"
+                        value={`NRs. ${singleBlogObject?.price}`}
+                        onChange={() => {}}
+                        disabled
+                      />
+
+                      {/* Description */}
+                      <div style={{ marginTop: ".5rem" }} className="">
+                        <label className="text-sm text-gray-600">
+                          Description
+                        </label>
+                        <textarea
+                          style={{ margin: "0px" }}
+                          className="border border-2  rounded-md text-sm w-full p-2 outline-blue-500 border-gray-200"
+                        />
+                      </div>
+
+                      {/* Submit Button */}
+                      <Button
+                        type="submit"
+                        variant="contained"
+                        color="success"
+                        className="w-full text-[1rem]"
+                      >
+                        Send Purchase Request
+                      </Button>
+                    </form>
+                  </Box>
+                </Modal>
+              </>
             )}
           </div>
           <p className="firstIntroduction mt-5 text-xs md:text-base">
@@ -170,17 +277,7 @@ const SingleBlog = ({ params }: any) => {
           ) : (
             ""
           )}
-          {/* for sale */}
-          {singleBlogObject.forsale ? (
-            <p className="text-sm md:text-base">
-              Wanna buy code? Visit cyshop{" "}
-              <Link href={singleBlogObject.forsale} className="text-blue-500">
-                here
-              </Link>
-            </p>
-          ) : (
-            ""
-          )}
+
           {/* if no yt display thubnail */}
           {/* <div
           className={`thumbnail w-full md:w-[315px] ${

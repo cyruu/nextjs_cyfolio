@@ -3,6 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect } from "react";
 import { codesell } from "@/codesell/codesell";
+import { Button } from "@mui/material";
+import LocalMallIcon from "@mui/icons-material/LocalMall";
+import PhotoAlbumIcon from "@mui/icons-material/PhotoAlbum";
 
 const CyShopPage = () => {
   useEffect(() => {
@@ -13,15 +16,15 @@ const CyShopPage = () => {
   return (
     <div className="cyshopcontainer min-h-[90vh] mt-[10vh] ">
       <div className="cyshopdescription w-[90%] mb-10 mx-auto mt-32 text-center md:mt-24 md:mb-14">
-        <p className="text-xl font-bold md:text-2xl ">Get Code</p>
-        <p className="text-xs text-gray-500 mt-1 md:text-sm">
-          Here are some of my projects that i have built. Source code for the
-          projects are available for sale. For demo of the project you are
-          interested visit the blog page or the youtube channel. If interested,
-          you can contact via social links from the{" "}
-          <Link href="/" className="text-blue-500">
-            home page.
-          </Link>
+        <p className="text-md font-bold mb-4 md:text-2xl ">
+          Welcome to Cyshop. Get the Code You Need.
+        </p>
+        <p className="text-xs  text-gray-500 mt-1 md:text-sm md:px-20">
+          Why start from scratch when you can buy, customize, and launch faster?
+          Get the source code today and take your development to the next level!
+          we’ve got well-structured, scalable, and customizable solutions to
+          save you time and effort. Browse through our collection, purchase the
+          code you need, and start building faster.
         </p>
       </div>
       <div
@@ -30,11 +33,11 @@ const CyShopPage = () => {
       >
         {codesell.map((codesel) => {
           return (
-            <Link
-              href={codesel.gitlink}
-              target="_blank"
+            <div
+              // href={codesel.gitlink}
+              // target="_blank"
               rel="noopener noreferrer"
-              className="relative codeselitem flex flex-col w-[100%] h-full rounded-2xl overflow-hidden transition-all duration-200 ease-in hover:shadow-md md:w-[80%] "
+              className="relative codeselitem cursor-pointer pb-4 flex flex-col w-[100%] h-full rounded-2xl overflow-hidden transition-all duration-200 ease-in hover:shadow-md md:w-[80%] "
               key={codesel.id}
             >
               <div
@@ -66,11 +69,27 @@ const CyShopPage = () => {
                     NRs. {codesel.price}
                   </p>
                 </div>
-                <span className="codeselbutton text-xs mt-3 mb-3 mr-auto text-red-700">
-                  Get Code <i className="ri-arrow-right-line"></i>
-                </span>
+                <div className="buttons mt-2 flex ">
+                  <Link href={`blogs/${codesel.id}`} className="w-full mr-2">
+                    <Button
+                      variant="outlined"
+                      className=" w-full text-md text-[1rem] text-gray-500"
+                    >
+                      <PhotoAlbumIcon className="mr-2" />
+                      Explore
+                    </Button>
+                  </Link>
+
+                  <Button
+                    variant="contained"
+                    color="success"
+                    className="w-full ml-2 text-[1rem]"
+                  >
+                    <LocalMallIcon className="mr-2" /> Buy
+                  </Button>
+                </div>
               </div>
-            </Link>
+            </div>
           );
         })}
       </div>
